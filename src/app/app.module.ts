@@ -6,6 +6,7 @@ import { MenuComponent } from './menu/menu.component';
 import { RodapeComponent } from './rodape/rodape.component';
 import { QuemSomosComponent } from './quem-somos/quem-somos.component';
 import { MenuProdutosComponent } from './produtos/menu-produtos.component';
+import { AppRoutingModule } from 'src/app-routing.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { MenuProdutosComponent } from './produtos/menu-produtos.component';
     MenuProdutosComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
