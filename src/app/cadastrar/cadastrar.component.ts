@@ -26,6 +26,7 @@ export class CadastrarComponent implements OnInit {
   checkUsuario(event: any){
     this.tipoUsuario = event.target.value
   }
+<<<<<<< HEAD
 //   cadastrar() {
 //     if (this.usuario.senha != this.confirmarSenha) {
 //       alert('Preencha todos os campos corretamente')
@@ -46,6 +47,11 @@ cadastrar(){
       this.router.navigate(['/entrar'])
     }) //subscribe serve para que o objeto não seja enviado da forma json
     alert('Cadastro concluído com sucesso!')
+=======
+  
+  checkUsuario(event: any) {
+    this.tipoUsuario = event.target.change
+>>>>>>> 02785cbe082d81fa516279457ca12992bd73cd14
   }
   else{
     alert('As senhas não coincidem!')
