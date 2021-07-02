@@ -35,6 +35,7 @@ export class CadastrarComponent implements OnInit {
       alert('Cadastro concluído com sucesso!')
     }
   }
+  
   checkUsuario(event: any) {
     this.tipoUsuario = event.target.change
   }
