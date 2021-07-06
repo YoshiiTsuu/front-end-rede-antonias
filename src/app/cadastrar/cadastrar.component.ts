@@ -23,40 +23,21 @@ export class CadastrarComponent implements OnInit {
   confirmSenha(event: any) {
     this.confirmarSenha = event.target.value
   }
-  checkUsuario(event: any){
-    this.tipoUsuario = event.target.value
+  setRadio(resp: boolean) {
+    this.tipoUsuario = resp
+    this.usuario.vendedor = this.tipoUsuario
   }
-<<<<<<< HEAD
-//   cadastrar() {
-//     if (this.usuario.senha != this.confirmarSenha) {
-//       alert('Preencha todos os campos corretamente')
-//     }
-//     else {
-//       this.authService.cadastrar(this.usuario).subscribe((resp: Usuario) => {
-//         this.usuario = resp
-//         this.router.navigate(['/entrar'])
-//       })
-//       alert('Cadastro concluído com sucesso!')
-//     }
-//   }
-// }
-cadastrar(){
-  if (this.usuario.senha == this.confirmarSenha){
-    this.authService.cadastrar(this.usuario).subscribe((resp: Usuario)=>{
-      this.usuario = resp
-      this.router.navigate(['/entrar'])
-    }) //subscribe serve para que o objeto não seja enviado da forma json
-    alert('Cadastro concluído com sucesso!')
-=======
-  
-  checkUsuario(event: any) {
-    this.tipoUsuario = event.target.change
->>>>>>> 02785cbe082d81fa516279457ca12992bd73cd14
+  cadastrar() {
+    if (this.usuario.senha == this.confirmarSenha) {
+      this.authService.cadastrar(this.usuario).subscribe((resp: Usuario) => {
+        this.usuario = resp
+        this.router.navigate(['/entrar'])
+      }) //subscribe serve para que o objeto não seja enviado da forma json
+      alert('Cadastro concluído com sucesso!')
+   
+    }
+    else {
+      alert('As senhas não coincidem!')
+    }
   }
-  else{
-    alert('As senhas não coincidem!')
-  }
-} 
-
 }
-
