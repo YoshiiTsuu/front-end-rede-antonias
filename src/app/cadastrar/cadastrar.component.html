@@ -16,19 +16,19 @@
           <div class="form-group col-md-12">
             <label for="inputNome">Nome</label>
             <input [(ngModel)]='usuario.nome' type="text" class="form-control" id="inputNome"
-              placeholder="Nome Completo">
+              placeholder="Nome Completo" name = 'nome'>
           </div>
           <div class="form-row mb-2">
-            <div class= "form-group col-md-12">
+            <div class="form-group col-md-12">
               <label for='inputPhoto'>Sua foto de perfil</label>
               <input [(ngModel)]='usuario.foto' type="text" class="form-control" id="inputPhoto"
-                placeholder="cole o Link">
+                placeholder="cole o Link" name='foto'>
             </div>
           </div>
           <div class="form-group mb-2 col-12">
             <label for="inputEmail4">Email válido</label>
             <input [(ngModel)]='usuario.email' type="email" class="form-control" id="inputEmail4"
-              placeholder="Digite seu Email">
+              placeholder="Digite seu Email" name ='email'>
           </div>
           <div class="form-group col-md-6 mb-2">
             <label for="inputPassword4">Senha</label>
@@ -38,7 +38,7 @@
           <div class="form-group col-md-6 mb-2">
             <label for="inputPassword">Confirme Senha</label>
             <input [(ngModel)]='usuario.senha' type="password" class="form-control" id="inputPassword"
-              placeholder="Confirmar Senha">
+              placeholder="Confirmar Senha" name ='confirmarSenha'>
           </div>
         </div>
         <div class="form-group mt-2">
@@ -48,34 +48,22 @@
               <input [(ngModel)]='usuario.dataAniversario' type="date" name="birthDate" id="inputBirthDate">
             </div>
             <div class="my-5 text-center row">
-              <!-- <input type="radio" name="vendedora" id="sim" value="true">Vendedora
-              <input type="radio" name="vendedora" id="nao" value="false" checked="">Consumidor -->
-<<<<<<< HEAD
-              <!-- <div class="col-6 ">
-                <input type="radio" id='vendedora' value='1' name='vendedora' (change)='checkUsuario($event)'> <strong> vendedora</strong>
-=======
               <div class="col-6 ">
-                <input type="radio" id='vendedora' value='1' name='vendedora'> <strong> vendedora</strong>
->>>>>>> 02785cbe082d81fa516279457ca12992bd73cd14
+                <input type="radio" id='vendedora' value='1' name='vendedora' (click)="setRadio(true)"> <strong> vendedora</strong>
                 <img width="250" height="200px" src="https://i.imgur.com/GP8GuEe.png" alt="vendedorClick">
               </div>
               <div class="col-6">
-                <input type="radio" id= 'consumidor' value='0' name ='vendedora' (change)='checkUsuario($event)'> <strong> Consumidor</strong>
+                <input type="radio" id= 'consumidor' value='0' name ='vendedora' (click)="setRadio(false)"> <strong> Consumidor</strong>
                 <img width="250" height="200px" src="https://i.imgur.com/AVtsPHf.png" alt="consumidorClick">
-<<<<<<< HEAD
-              </div> -->
-=======
-              </div> 
->>>>>>> 02785cbe082d81fa516279457ca12992bd73cd14
+              </div>
             </div>
           </div>
         </div>
-        <div class="d-flex justify-content-center kg-16">
-          <button type="submit" class="btn btn-success" (click)='cadastrar()'>Cadastrar</button>
-        </div>
-      </form>
-      <hr>
-      <p>Já tem uma conta? <a href='' routerLink='/entrar'>Faça login aqui</a></p>
+    <div class="d-flex justify-content-center kg-16">
+      <button type="submit" class="btn btn-success" (click)='cadastrar()'>Cadastrar</button>
     </div>
+    </form>
+    <hr>
+    <p>Já tem uma conta? <a routerLink='/entrar'>Faça login aqui</a></p>
   </div>
 </div>

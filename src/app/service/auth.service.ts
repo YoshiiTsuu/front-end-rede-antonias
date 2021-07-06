@@ -16,11 +16,11 @@ export class AuthService {
 
   /*Falta adicionar as rotas aqui (com o link do Heroku/nome entrar e cadastrar) */
   entrar(userLogin : UsuarioLogin) : Observable<UsuarioLogin>{
-    return this.http.post<UsuarioLogin>('http://redeantonias.herokuapp.com/usuario/logar',userLogin)
+    return this.http.post<UsuarioLogin>('https://redeantonias.herokuapp.com/usuario/logar',userLogin)
   }
 
   cadastrar(user : Usuario) : Observable<Usuario>{
-    return this.http.post<Usuario>('http://redeantonias.herokuapp.com/usuario/cadastrar',user)
+    return this.http.post<Usuario>('https://redeantonias.herokuapp.com/usuario/cadastrar',user)
   }
 
 /* Tem que fazer isso para finalizar compra (se não estiver logado não vai finalizar a compra)
