@@ -11,6 +11,7 @@ export class ProdutosServicos{
     public midias : string
     public curtir : number
     public dislike : number
+    public escolhaServicosProdutos: boolean
     public categoria : Categoria
     public usuario : Usuario
 }
