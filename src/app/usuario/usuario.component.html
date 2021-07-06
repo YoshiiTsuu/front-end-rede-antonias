@@ -1,0 +1,85 @@
+<div class="container">
+    <div class="row">
+    <div class="col-md-4">
+        <div class="card" style="width: 30rem;">
+            <div style="width:270px ; height:266 px" class="container d-flex justify-content-center">
+                <img class="card-img-top my-3"
+                    src="https://media.discordapp.net/attachments/844560082217074758/860252119759454228/edit-logo.png"
+                    alt="Logo Rede Antônias">
+            </div>
+            <h3 class="text-center">Nome do vendedor</h3>
+            <div class="card-body">
+                <div>
+                    <button>Editar dados pessoais</button>
+                    <button>Curtidas</button>
+                    <!--mostrar as qts de curtidas vendedor-->
+                    <button>Descurtidas</button>
+                    <button>Sair</button>
+                    <button>Excluir conta</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <h2>Cadastrar produto/serviço</h2>
+        <form>
+            <div class="form-group row">
+                <label for="nome" class="col-sm-2 col-form-label">Nome serviço/produto</label>
+                <div class="col-sm-10">
+                    <input [(ngModel)]='produto.nomeProdutosServicos' type="text" class="form-control" id="nome" name="nome"
+                        placeholder="Digite o nome do produto">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="descricao" class="col-sm-2 col-form-label">Descrição</label>
+                <div class="col-sm-10">
+                    <textarea [(ngModel)]='produto.descricao' name="descricao" id="descricao" cols="30" rows="10"
+                        placeholder="Digite a descrição do produto/serviço"></textarea>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="preco" class="col-sm-2 col-form-label">Preço</label>
+                <div class="col-sm-10">
+                    <input [(ngModel)]='produto.preco' type="number" class="form-control" id="preco" name="preco"
+                        placeholder="Digite o valor do produto/serviço">
+                </div>
+            </div>
+            <div class="my-5 text-center row">
+                <div class="col-6 ">
+                    <input (click)='setRadio(true)' type="radio" id='produtoServico' value='1' name='produtoServico'> <strong>
+                        Produto</strong>
+                </div>
+                <div class="col-6">
+                    <input (click)='setRadio(false)' type="radio" id='produtoServico' value='0' name='produtoServico'> <strong>
+                        Serviço</strong>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="estoque" class="col-sm-2 col-form-label">Estoque</label>
+                <div class="col-sm-10">
+                    <input [(ngModel)]='produto.estoqueVendedor' type="number" class="form-control" id="estoque" name="estoque"
+                        placeholder="Digite a quantidade em estoque">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="categoriaServico">Categoria produto/serviço</label>
+                <select class="form-control" name="categoriaServico" id="categoriaServico">
+                    <option>Selecione a categoria</option>
+                    <option value="normal">a</option>
+                    <option value="normal">b</option>
+                    <option value="normal">c</option>
+                    <option value="normal">d</option>
+                    <option value="normal">e</option>
+                </select>
+            </div>
+            <div class="form-group row">
+                <label for="foto" class="col-sm-2 col-form-label">Link da foto do produto</label>
+                <div class="col-sm-10">
+                    <input [(ngModel)]='produto.midias' type="text" class="form-control" id="foto" placeholder="Insira o link da foto do produto" name="foto">
+                </div>
+            </div>
+        </form>
+        <button class="btn btn-success" (click)='cadastrar()'>Cadastrar</button>
+    </div>
+</div>
+</div>

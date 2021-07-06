@@ -11,6 +11,7 @@ import { AppRoutingModule } from 'src/app-routing.module';
 import { EntrarComponent } from './entrar/entrar.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { FormsModule } from '@angular/forms';
+import { UsuarioComponent } from './usuario/usuario.component';
 
 
 
@@ -22,7 +23,8 @@ import { FormsModule } from '@angular/forms';
     QuemSomosComponent,
     MenuProdutosComponent,
     EntrarComponent,
-    CadastrarComponent
+    CadastrarComponent,
+    UsuarioComponent
   ],
   imports: [
     BrowserModule,
