@@ -69,88 +69,11 @@
 </div>
 
 <div class="d-flex justify-content-between m-5 row ">
-<div class="card" style="width: 14rem;">
-    <img class="card-img-top" src="https://media.discordapp.net/attachments/859062621465739284/859089988671111208/cute-cloud-smiling-face-seamless-pattern-vector-id1205189172.png?width=677&height=676" alt="Imagem de capa do card">
-    <div class="card-body">
-        <p>nome produto</p>
-      <h4 class="card-text">Preço em destaque</h4>
+    <div class="card" style="width: 14rem;" *ngFor='let produto of listaProduto'>
+        <img class="card-img-top" src="{{produto.midias}}" alt="Imagem de capa do card">
+        <div class="card-body">
+            <p>{{produto.nomeProdutosServicos}}</p>
+            <h4 class="card-text">{{produto.preco}}</h4>
+        </div>
     </div>
-  </div>
-  <div class="card" style="width: 14rem;">
-    <img class="card-img-top" src="https://media.discordapp.net/attachments/859062621465739284/859089988671111208/cute-cloud-smiling-face-seamless-pattern-vector-id1205189172.png?width=677&height=676" alt="Imagem de capa do card">
-    <div class="card-body">
-        <p>nome produto</p>
-      <h4 class="card-text">Preço em destaque</h4>
-    </div>
-  </div>
-  <div class="card" style="width: 14rem;">
-    <img class="card-img-top" src="https://media.discordapp.net/attachments/859062621465739284/859089988671111208/cute-cloud-smiling-face-seamless-pattern-vector-id1205189172.png?width=677&height=676" alt="Imagem de capa do card">
-    <div class="card-body">
-        <p>nome produto</p>
-      <h4 class="card-text">Preço em destaque</h4>
-    </div>
-  </div>
-  <div class="card row" style="width: 14rem; ">
-    <img class="card-img-top" src="https://media.discordapp.net/attachments/859062621465739284/859089988671111208/cute-cloud-smiling-face-seamless-pattern-vector-id1205189172.png?width=677&height=676" alt="Imagem de capa do card">
-    <div class="card-body">
-        <p>nome produto</p>
-      <h4 class="card-text">Preço em destaque</h4>
-    </div>
-  </div>
-  <div class="card" style="width: 14rem;">
-    <img class="card-img-top" src="https://media.discordapp.net/attachments/859062621465739284/859089988671111208/cute-cloud-smiling-face-seamless-pattern-vector-id1205189172.png?width=677&height=676" alt="Imagem de capa do card">
-    <div class="card-body">
-        <p>nome produto</p>
-      <h4 class="card-text">Preço em destaque</h4>
-    </div>
-  </div>
-  <div class="card" style="width: 14rem;">
-    <img class="card-img-top" src="https://media.discordapp.net/attachments/859062621465739284/859089988671111208/cute-cloud-smiling-face-seamless-pattern-vector-id1205189172.png?width=677&height=676" alt="Imagem de capa do card">
-    <div class="card-body">
-        <p>nome produto</p>
-      <h4 class="card-text">Preço em destaque</h4>
-    </div>
-  </div>
-  <div class="card" style="width: 14rem;">
-    <img class="card-img-top" src="https://media.discordapp.net/attachments/859062621465739284/859089988671111208/cute-cloud-smiling-face-seamless-pattern-vector-id1205189172.png?width=677&height=676" alt="Imagem de capa do card">
-    <div class="card-body">
-        <p>nome produto</p>
-      <h4 class="card-text">Preço em destaque</h4>
-    </div>
-  </div>
-  <div class="card" style="width: 14rem;">
-    <img class="card-img-top" src="https://media.discordapp.net/attachments/859062621465739284/859089988671111208/cute-cloud-smiling-face-seamless-pattern-vector-id1205189172.png?width=677&height=676" alt="Imagem de capa do card">
-    <div class="card-body">
-        <p>nome produto</p>
-      <h4 class="card-text">Preço em destaque</h4>
-    </div>
-  </div>
-  <div class="card" style="width: 14rem;">
-    <img class="card-img-top" src="https://media.discordapp.net/attachments/859062621465739284/859089988671111208/cute-cloud-smiling-face-seamless-pattern-vector-id1205189172.png?width=677&height=676" alt="Imagem de capa do card">
-    <div class="card-body">
-        <p>nome produto</p>
-      <h4 class="card-text">Preço em destaque</h4>
-    </div>
-  </div>
-  <div class="card" style="width: 14rem;">
-    <img class="card-img-top" src="https://media.discordapp.net/attachments/859062621465739284/859089988671111208/cute-cloud-smiling-face-seamless-pattern-vector-id1205189172.png?width=677&height=676" alt="Imagem de capa do card">
-    <div class="card-body">
-        <p>nome produto</p>
-      <h4 class="card-text">Preço em destaque</h4>
-    </div>
-  </div>
-  <div class="card" style="width: 14rem;">
-    <img class="card-img-top" src="https://media.discordapp.net/attachments/859062621465739284/859089988671111208/cute-cloud-smiling-face-seamless-pattern-vector-id1205189172.png?width=677&height=676" alt="Imagem de capa do card">
-    <div class="card-body">
-        <p>nome produto</p>
-      <h4 class="card-text">Preço em destaque</h4>
-    </div>
-  </div>
-  <div class="card" style="width: 14rem;">
-    <img class="card-img-top" src="https://media.discordapp.net/attachments/859062621465739284/859089988671111208/cute-cloud-smiling-face-seamless-pattern-vector-id1205189172.png?width=677&height=676" alt="Imagem de capa do card">
-    <div class="card-body">
-        <p>nome produto</p>
-      <h4 class="card-text">Preço em destaque</h4>
-    </div>
-  </div>
 </div>
