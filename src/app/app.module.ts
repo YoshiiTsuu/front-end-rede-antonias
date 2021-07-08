@@ -11,7 +11,11 @@ import { AppRoutingModule } from 'src/app-routing.module';
 import { EntrarComponent } from './entrar/entrar.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { FormsModule } from '@angular/forms';
-import { UsuarioComponent } from './usuario/usuario.component';
+import { UsuarioComponent } from './cadastro-produto/usuario.component';
+import { UsuarioEditComponent } from './edit/usuario-edit-delete/usuario-edit.component';
+import { UsuarioDeleteComponent } from './delete/usuario-delete/usuario-delete.component';
+import { ProdutooEditComponent } from './edit/produtoo-edit/produtoo-edit.component';
+import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.component';
 
 
 
@@ -24,7 +28,11 @@ import { UsuarioComponent } from './usuario/usuario.component';
     MenuProdutosComponent,
     EntrarComponent,
     CadastrarComponent,
-    UsuarioComponent
+    UsuarioComponent,
+    UsuarioEditComponent,
+    UsuarioDeleteComponent,
+    ProdutooEditComponent,
+    ProdutoDeleteComponent
   ],
   imports: [
     BrowserModule,

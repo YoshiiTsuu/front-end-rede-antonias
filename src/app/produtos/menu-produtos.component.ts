@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProdutosServicos } from '../model/ProdutosServicos';
-import { UsuarioService } from '../service/usuario.service';
+import { ProdutoService } from '../service/produto.service';
 
 @Component({
   selector: 'app-menu-produtos',
@@ -11,7 +11,7 @@ export class MenuProdutosComponent implements OnInit {
 
   listaProduto: ProdutosServicos[]
   constructor(
-    private produtoService: UsuarioService
+    private produtoService: ProdutoService
   ) {}
 
   ngOnInit(){

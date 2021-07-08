@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { ProdutosServicos } from '../model/ProdutosServicos';
-import { UsuarioService } from '../service/usuario.service';
+import { ProdutoService } from '../service/produto.service';
 
 @Component({
   selector: 'app-usuario',
@@ -14,11 +14,12 @@ export class UsuarioComponent implements OnInit {
   produto: ProdutosServicos = new ProdutosServicos
   listaProduto: ProdutosServicos[]
   produtoOuServico: boolean
+  idProduto : number
 
   constructor(
-    private produtoService: UsuarioService,
-    private router: Router
-
+    private produtoService: ProdutoService,
+    private router: Router,
+    private route:ActivatedRoute
   ) { }
 
   ngOnInit() {
@@ -26,6 +27,8 @@ export class UsuarioComponent implements OnInit {
       alert('Sua sessão expirou, faça login novamente')
       this.router.navigate(['/entrar'])
     }
+    this.idProduto = this.route.snapshot.params['id']
+    this.findByIdProdutos(this.idProduto)
     this.findAllProdutos()
   }
   //true = produtos e false = serviços
@@ -46,6 +49,27 @@ export class UsuarioComponent implements OnInit {
   findAllProdutos() {
     this.produtoService.getAllProdutos().subscribe((resp: ProdutosServicos[]) => {
       this.listaProduto = resp
+    })
+  }
+
+  findByIdProdutos(id:number){
+    this.produtoService.getByIdProduto(id).subscribe((resp:ProdutosServicos)=>{
+      this.produto = resp
+    })
+  }
+
+  atualizarProdutos(){
+    this.produtoService.putProduto(this.produto).subscribe((resp:ProdutosServicos)=>{
+      this.produto = resp
+      alert('Produto/Serviço atualizado com sucesso!')
+      this.router.navigate(['/usuario'])
+    })
+  }
+
+  deletarProdutos(){
+    this.produtoService.deleteProduto(this.idProduto).subscribe(()=>{
+      alert('Produto/Serviço apagado com sucesso!')
+      this.router.navigate(['/usuario'])
     })
   }
 
