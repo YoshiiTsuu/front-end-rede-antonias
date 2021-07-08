@@ -34,7 +34,6 @@ export class CadastrarComponent implements OnInit {
         this.router.navigate(['/entrar'])
       }) //subscribe serve para que o objeto não seja enviado da forma json
       alert('Cadastro concluído com sucesso!')
-   
     }
     else {
       alert('As senhas não coincidem!')

@@ -16,6 +16,7 @@ export class MenuProdutosComponent implements OnInit {
 
   ngOnInit(){
     this.findAllProdutos()
+    console.log(this.listaProduto)
   }
 
   findAllProdutos() {
