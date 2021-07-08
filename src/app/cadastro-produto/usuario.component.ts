@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
+import { Categoria } from '../model/Categoria';
 import { ProdutosServicos } from '../model/ProdutosServicos';
+import { Usuario } from '../model/Usuario';
+import { AuthService } from '../service/auth.service';
+import { CategoriaService } from '../service/categoria.service';
 import { ProdutoService } from '../service/produto.service';
 
 @Component({
@@ -15,11 +19,19 @@ export class UsuarioComponent implements OnInit {
   listaProduto: ProdutosServicos[]
   produtoOuServico: boolean
   idProduto : number
+  listaCategoria: Categoria[]
+  categoria: Categoria = new Categoria()
+  idCategoria: number
+  usuario: Usuario = new Usuario()
+  idUsuario: number
+
 
   constructor(
     private produtoService: ProdutoService,
     private router: Router,
-    private route:ActivatedRoute
+    private route:ActivatedRoute,
+    private categoriaService:CategoriaService,
+    private authService: AuthService
   ) { }
 
   ngOnInit() {
@@ -31,6 +43,8 @@ export class UsuarioComponent implements OnInit {
     this.idProduto = this.route.snapshot.params['id']
     this.findByIdProdutos(this.idProduto)
     this.findAllProdutos()
+    this.findAllCategoria()
+    // this.findByIdUsuarios(this.idUsuario)
   }
   //true = produtos e false = serviços
   setRadio(resp: boolean) {
@@ -46,11 +60,21 @@ export class UsuarioComponent implements OnInit {
       this.produto = new ProdutosServicos
     })
   }
-
   findAllProdutos() {
     this.produtoService.getAllProdutos().subscribe((resp: ProdutosServicos[]) => {
       this.listaProduto = resp
     })
+  }
+  
+  findByIdCategoria(){
+    this.categoriaService.getByIdCategoria(this.idCategoria).subscribe((resp:Categoria)=>{
+      this.categoria = resp;
+    })
+  }
+  findAllCategoria() {
+    this.categoriaService.getAllCategoria().subscribe((resp: Categoria[]) => {
+      this.listaCategoria = resp;
+    });
   }
 
   findByIdProdutos(id:number){
@@ -58,6 +82,12 @@ export class UsuarioComponent implements OnInit {
       this.produto = resp
     })
   }
+  // Esta parte não funciona É O FINDBYUSUARIO! PRA PODER USAR O GET ID NO BOTÃO DE EDITAR DADOS PESSOAIS 
+  // findByIdUsuarios(id:number){
+  //   this.authService.getByIdUsuarios(id).subscribe((resp:Usuario)=>{
+  //     this.usuario = resp
+  //   })
+  // }
 
   atualizarProdutos(){
     this.produtoService.putProduto(this.produto).subscribe((resp:ProdutosServicos)=>{

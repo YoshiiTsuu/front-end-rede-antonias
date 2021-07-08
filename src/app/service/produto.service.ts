@@ -35,6 +35,4 @@ export class ProdutoService {
   deleteProduto(id:number){
     return this.http.delete(`https://redeantonias.herokuapp.com/produtosservicos/${id}`, this.token)
   }
-
-
 }
