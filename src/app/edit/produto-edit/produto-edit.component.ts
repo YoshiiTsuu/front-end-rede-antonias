@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Categoria } from 'src/app/model/Categoria';
 import { ProdutosServicos } from 'src/app/model/ProdutosServicos';
+import { CategoriaService } from 'src/app/service/categoria.service';
 import { ProdutoService } from 'src/app/service/produto.service';
 import { environment } from 'src/environments/environment.prod';
 
@@ -14,11 +16,16 @@ export class ProdutoEditComponent implements OnInit {
   listaProduto: ProdutosServicos[]
   produtoOuServico: boolean
   idProduto: number
+  categoria: Categoria = new Categoria 
+  idCategoria: number
+  listaCategoria: Categoria[]
+
 
   constructor(
     private produtoService: ProdutoService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private categoriaService: CategoriaService
   ) { }
 
   ngOnInit() {
@@ -29,6 +36,7 @@ export class ProdutoEditComponent implements OnInit {
     }
     this.idProduto = this.route.snapshot.params['id']
     this.findByIdProdutos(this.idProduto)
+    this.idCategoria=this.route.snapshot.params['id']
   }
 
   findByIdProdutos(id: number) {
@@ -37,11 +45,21 @@ export class ProdutoEditComponent implements OnInit {
     })
   }
   
+  findByIdCategoria(){
+    this.categoriaService.getByIdCategoria(this.idCategoria).subscribe((resp: Categoria)=> {this.categoria=resp})
+  }
+  findAllCategoria(){
+    this.categoriaService.getAllCategoria().subscribe((resp: Categoria[]) => {this.listaCategoria=resp})
+  }
+
   atualizarProdutos() {
+    this.categoria.id = this.idCategoria;
+    this.produto.categoria = this.categoria;
     this.produtoService.putProduto(this.produto).subscribe((resp: ProdutosServicos) => {
       this.produto = resp
       alert('Produto/Serviço atualizado com sucesso!')
       this.router.navigate(['/usuario'])
+
     })
   }
 
