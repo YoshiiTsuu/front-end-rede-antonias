@@ -13,10 +13,8 @@ import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { FormsModule } from '@angular/forms';
 import { UsuarioComponent } from './cadastro-produto/usuario.component';
 import { UsuarioEditComponent } from './edit/usuario-edit-delete/usuario-edit.component';
-import { UsuarioDeleteComponent } from './delete/usuario-delete/usuario-delete.component';
-import { ProdutooEditComponent } from './edit/produtoo-edit/produtoo-edit.component';
-import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.component';
-
+import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component';
+import { CadastrarCategoriaComponent } from './cadastrar-categoria/cadastrar-categoria.component';
 
 
 @NgModule({
@@ -30,15 +28,14 @@ import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.c
     CadastrarComponent,
     UsuarioComponent,
     UsuarioEditComponent,
-    UsuarioDeleteComponent,
-    ProdutooEditComponent,
-    ProdutoDeleteComponent
+    ProdutoEditComponent,
+    CadastrarCategoriaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule,
+    FormsModule
   ],
 
   providers: [ 

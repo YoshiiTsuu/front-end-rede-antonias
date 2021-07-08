@@ -6,6 +6,7 @@ import { MenuProdutosComponent } from './app/produtos/menu-produtos.component';
 import { QuemSomosComponent } from './app/quem-somos/quem-somos.component';
 import { UsuarioComponent } from './app/cadastro-produto/usuario.component';
 import { UsuarioEditComponent } from './app/edit/usuario-edit-delete/usuario-edit.component';
+import { ProdutoEditComponent } from './app/edit/produto-edit/produto-edit.component';
 
 const routes: Routes=[
   {path: '', redirectTo: 'quemsomos', pathMatch: 'full'},
@@ -15,8 +16,8 @@ const routes: Routes=[
   {path:'cadastrar', component:CadastrarComponent},
   {path: 'usuario', component:UsuarioComponent},
   {path:'usuario-editar/:id', component:UsuarioEditComponent},
-  {path:'produto-editar/:id', component:UsuarioComponent},
-  {path:'produto-delete/:id', component:UsuarioComponent},
+  {path:'produto-editar/:id', component:ProdutoEditComponent},
+  {path:'produto-delete/:id', component:ProdutoEditComponent},
   {path:'usuario-delete/:id', component:UsuarioEditComponent}
 ];
 
