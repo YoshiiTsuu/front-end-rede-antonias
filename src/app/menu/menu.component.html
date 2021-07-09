@@ -1,7 +1,9 @@
 <nav class="navbar navbar-expand-lg navbar-light cor-bg">
-    <a class="navbar-brand" href="#"><img class="img-fluid rounded-circle"
-            src="https://media.discordapp.net/attachments/844560082217074758/859049764306026536/1.png" alt=""
-            width="50px" height="50px"></a>
+    <a class="navbar-brand text-light" style="font-size: 17pt;" href="#"><img 
+            src="https://media.discordapp.net/attachments/844560082217074758/860607094951772210/edit-logo1.png" alt=""
+            width="50px" height="50px">
+            Rede Antonias
+        </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
         aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
         <span class="navbar-toggler-icon"></span>
@@ -10,29 +12,37 @@
         <div>
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link text-light" routerLink='/categoria'>Ir para serviços <span class="sr-only">(página
+                    <a class="nav-link text-light" routerLink='/servicos' style="font-size: 17pt;">Ir para serviços
+                        <span class="sr-only">(página
+                            atual)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link text-light" routerLink='/produtos' style="font-size: 17pt;">Ir para produtos
+                        <span class="sr-only">(página
                             atual)</span></a>
                 </li>
             </ul>
         </div>
         <div>
-            <form class="form-inline my-2  my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Pesquisa" aria-label="Pesquisar">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-search"
+            <form class="form-inline my-2  my-lg-0" style="margin-left: 300px;"> 
+                <input class="form-control mr-sm-2" type="search" placeholder="Pesquisa" aria-label="Pesquisar" style="font-size: 17pt;">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-search" style="font-size: 17pt;"
                         aria-hidden="true"></i>
                 </button>
             </form>
         </div>
         <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
             <li class="nav-item">
-                <a class="nav-link text-light" href="#">Quem somos?</a>
+                <a class="nav-link text-light" href="#" style="font-size: 17pt;">Quem somos?</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link disabled text-light" routerLink='/entrar'>Entrar</a>
+                <a class="nav-link disabled text-light" routerLink='/usuario' style="font-size: 17pt;">Entrar
+                    <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                </a>
             </li>
             <li class="nav-item d-flex align-items-center mr-4">
-                <a routerLink='/usuario'>
-                    <i class="fa fa-shopping-cart text-light fs-16 ml-2"></i>
+                <a class="text-light" style="font-size: 25pt;">
+                    <i class="fa fa-shopping-cart ml-2"></i>
                 </a>
             </li>
         </ul>
