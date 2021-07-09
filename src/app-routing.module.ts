@@ -8,19 +8,21 @@ import { UsuarioComponent } from './app/cadastro-produto/usuario.component';
 import { UsuarioEditComponent } from './app/edit/usuario-edit-delete/usuario-edit.component';
 import { ProdutoEditComponent } from './app/edit/produto-edit/produto-edit.component';
 import { CadastrarCategoriaComponent } from './app/cadastrar-categoria/cadastrar-categoria.component';
+import { ServicosComponent } from './app/servicos/servicos.component';
 
-const routes: Routes=[
-  {path: '', redirectTo: 'quemsomos', pathMatch: 'full'},
-  {path: 'quemsomos', component: QuemSomosComponent},
-  {path: 'produtos', component: MenuProdutosComponent},
-  {path: 'entrar', component:EntrarComponent},
-  {path:'cadastrar', component:CadastrarComponent},
-  {path: 'usuario', component:UsuarioComponent},
-  {path:'categoria', component:CadastrarCategoriaComponent},
-  {path:'usuario-editar/:id', component:UsuarioEditComponent},
-  {path:'produto-editar/:id', component:ProdutoEditComponent},
-  {path:'produto-delete/:id', component:ProdutoEditComponent},
-  {path:'usuario-delete/:id', component:UsuarioEditComponent}
+const routes: Routes = [
+  { path: '', redirectTo: 'quemsomos', pathMatch: 'full' },
+  { path: 'quemsomos', component: QuemSomosComponent },
+  { path: 'produtos', component: MenuProdutosComponent },
+  { path: 'servicos', component: ServicosComponent },
+  { path: 'entrar', component: EntrarComponent },
+  { path: 'cadastrar', component: CadastrarComponent },
+  { path: 'usuario', component: UsuarioComponent },
+  { path: 'categoria', component: CadastrarCategoriaComponent },
+  { path: 'usuario-editar/:id', component: UsuarioEditComponent },
+  { path: 'produto-editar/:id', component: ProdutoEditComponent },
+  { path: 'produto-delete/:id', component: ProdutoEditComponent },
+  { path: 'usuario-delete/:id', component: UsuarioEditComponent }
 ];
 
 @NgModule({
@@ -28,7 +30,7 @@ const routes: Routes=[
   imports: [
     RouterModule.forRoot(routes)
   ],
-  exports:[
+  exports: [
     RouterModule
   ]
 })

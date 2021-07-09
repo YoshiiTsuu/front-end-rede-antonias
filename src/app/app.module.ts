@@ -15,6 +15,7 @@ import { UsuarioComponent } from './cadastro-produto/usuario.component';
 import { UsuarioEditComponent } from './edit/usuario-edit-delete/usuario-edit.component';
 import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component';
 import { CadastrarCategoriaComponent } from './cadastrar-categoria/cadastrar-categoria.component';
+import { ServicosComponent } from './servicos/servicos.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { CadastrarCategoriaComponent } from './cadastrar-categoria/cadastrar-cat
     UsuarioComponent,
     UsuarioEditComponent,
     ProdutoEditComponent,
-    CadastrarCategoriaComponent
+    CadastrarCategoriaComponent,
+    ServicosComponent
   ],
   imports: [
     BrowserModule,
