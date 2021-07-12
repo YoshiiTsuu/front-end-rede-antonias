@@ -67,7 +67,7 @@ export class UsuarioComponent implements OnInit {
   }
   
   findByIdCategoria(){
-    this.categoriaService.getByIdCategoria(this.idCategoria).subscribe((resp:Categoria)=>{
+    this.categoriaService.getByIdCategoria(this.idCategoria).subscribe((resp: Categoria)=>{
       this.categoria = resp;
     })
   }

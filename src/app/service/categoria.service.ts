@@ -15,7 +15,7 @@ export class CategoriaService {
 getAllCategoria(): Observable<Categoria[]> {
   return this.http.get<Categoria[]>(
     'https://redeantonias.herokuapp.com/categoria',
-    this.token
+    this.token 
   );
 }
 

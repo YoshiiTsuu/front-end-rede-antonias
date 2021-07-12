@@ -78,10 +78,10 @@
                     </select>
                 </div> -->
                 <div class="form-group row">
-                    <label class="text-monospace" for="categoria">Escolha um tema ou <a routerLink='/categoria'>Cadastre
+                    <label class="text-monospace" for="categoria">Escolha um tema ou <a routerLink='/ categoria'>Cadastre
                             um novo</a>
                     </label>
-                    <select name="categoria" id='categoria' class="form-control" [(ngModel)]='idCategoria'
+                    <select name="categoria" id="categoria" class="form-control" [(ngModel)]='idCategoria'
                         (change)='findByIdCategoria()'>
                         <option *ngFor='let item of listaCategoria' value={{categoria.id}}>
                             {{item.descricao}}

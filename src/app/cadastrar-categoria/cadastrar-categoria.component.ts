@@ -33,9 +33,10 @@ export class CadastrarCategoriaComponent implements OnInit {
   cadastrar() {
     this.categoriaService.postCategoria(this.categoria).subscribe((resp: Categoria) => {
       this.categoria = resp;
+      
       this.findAllCategoria();
       this.categoria = new Categoria();
       alert('Categoria cadastrada com sucesso')
     });
   }
-}
+} 

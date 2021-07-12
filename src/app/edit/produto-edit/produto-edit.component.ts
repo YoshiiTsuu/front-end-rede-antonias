@@ -39,7 +39,7 @@ export class ProdutoEditComponent implements OnInit {
     this.idCategoria=this.route.snapshot.params['id']
   }
 
-  findByIdProdutos(id: number) {
+  findByIdProdutos(id: number) { 
     this.produtoService.getByIdProduto(id).subscribe((resp: ProdutosServicos) => {
       this.produto = resp
     })

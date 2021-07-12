@@ -22,6 +22,6 @@ export class MenuProdutosComponent implements OnInit {
   findAllProdutos() {
     this.produtoService.getAllProdutos().subscribe((resp: ProdutosServicos[]) => {
       this.listaProduto = resp
-    })
+    }) 
   }
 }

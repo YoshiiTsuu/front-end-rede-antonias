@@ -25,4 +25,4 @@ export class ServicosComponent implements OnInit {
       this.listaProduto = resp
     })
   }
-}
+} 
