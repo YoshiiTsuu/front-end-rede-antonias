@@ -34,9 +34,9 @@ export class ProdutoEditComponent implements OnInit {
       alert('Sua sessão expirou, faça login novamente')
       this.router.navigate(['/entrar'])
     }
-    this.idProduto = this.route.snapshot.params['id']
-    this.findByIdProdutos(this.idProduto)
-    this.idCategoria=this.route.snapshot.params['id']
+    let id = this.route.snapshot.params['id']
+    this.findByIdProdutos(id)
+  
   }
 
   findByIdProdutos(id: number) { 

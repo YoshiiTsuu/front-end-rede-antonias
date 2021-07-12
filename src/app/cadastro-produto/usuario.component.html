@@ -84,7 +84,7 @@
                     <select name="categoria" id="categoria" class="form-control" [(ngModel)]='idCategoria'
                         (change)='findByIdCategoria()'>
                         <option *ngFor='let item of listaCategoria' value={{categoria.id}}>
-                            {{item.descricao}}
+                            {{item.produtoServicos}}
                         </option>
                     </select>
                 </div>

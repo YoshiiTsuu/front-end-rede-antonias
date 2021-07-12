@@ -38,5 +38,5 @@ export class CadastrarCategoriaComponent implements OnInit {
       this.categoria = new Categoria();
       alert('Categoria cadastrada com sucesso')
     });
-  }
+  } 
 } 
