@@ -24,8 +24,8 @@ export class UsuarioComponent implements OnInit {
   idCategoria: number
   usuario: Usuario = new Usuario()
   idUsuario: number
-
-
+  foto = environment.foto
+  nome =environment.nome
   constructor(
     private produtoService: ProdutoService,
     private router: Router,
@@ -83,11 +83,11 @@ export class UsuarioComponent implements OnInit {
     })
   }
   // Esta parte não funciona É O FINDBYUSUARIO! PRA PODER USAR O GET ID NO BOTÃO DE EDITAR DADOS PESSOAIS 
-  // findByIdUsuarios(id:number){
-  //   this.authService.getByIdUsuarios(id).subscribe((resp:Usuario)=>{
-  //     this.usuario = resp
-  //   })
-  // }
+  findByIdUsuarios(id:number){
+    this.authService.getByIdUsuario(id).subscribe((resp:Usuario)=>{
+      this.usuario = resp
+    })
+  }
 
   atualizarProdutos(){
     this.produtoService.putProduto(this.produto).subscribe((resp:ProdutosServicos)=>{

@@ -11,14 +11,17 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class UsuarioEditComponent implements OnInit {
 
-  usuario: Usuario = new Usuario
-  idUsuario : number
+  usuario: Usuario = new Usuario;
+  idUsuario : number;
+  nome = environment.nome;
+  foto = environment.foto;
+  confirmarSenha: string;
 
   constructor(
     private authService: AuthService,
     private router: Router,
     private route: ActivatedRoute
-  ) { }
+  ) {}
 
   ngOnInit() {
     window.scroll(0, 0);
@@ -35,6 +38,9 @@ export class UsuarioEditComponent implements OnInit {
       this.usuario = resp
     })
   }
+  confirmSenha(event: any) {
+    this.confirmarSenha = event.target.value
+  }
 
   atualizarUsuario(){
     this.authService.putUsuario(this.usuario).subscribe((resp:Usuario)=>{
@@ -50,5 +56,6 @@ export class UsuarioEditComponent implements OnInit {
       this.router.navigate(['/usuario-editar'])
     })
   }
+  //falta criar método atualizar dados usuario!
 
 }

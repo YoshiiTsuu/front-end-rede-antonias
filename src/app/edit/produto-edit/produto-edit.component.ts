@@ -59,7 +59,6 @@ export class ProdutoEditComponent implements OnInit {
       this.produto = resp
       alert('Produto/Serviço atualizado com sucesso!')
       this.router.navigate(['/usuario'])
-
     })
   }
 
