@@ -1,3 +1,4 @@
+import { VerProdutoComponent } from './app/ver-produto/ver-produto.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CadastrarComponent } from './app/cadastrar/cadastrar.component';
@@ -22,7 +23,8 @@ const routes: Routes = [
   { path: 'usuario-editar/:id', component: UsuarioEditComponent },
   { path: 'produto-editar/:id', component: ProdutoEditComponent },
   { path: 'produto-delete/:id', component: ProdutoEditComponent },
-  { path: 'usuario-delete/:id', component: UsuarioEditComponent }
+  { path: 'usuario-delete/:id', component: UsuarioEditComponent },
+  {path: 'ver-produto', component: VerProdutoComponent} //Não coloquei o id aqui pois não funcionou anteriormente
 ];
 
 @NgModule({
