@@ -1,4 +1,7 @@
+import { CategoriaService } from './../service/categoria.service';
+import { Categoria } from './../model/Categoria';
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment.prod';
 import { ProdutosServicos } from '../model/ProdutosServicos';
 import { ProdutoService } from '../service/produto.service';
 
@@ -10,8 +13,10 @@ import { ProdutoService } from '../service/produto.service';
 export class MenuProdutosComponent implements OnInit {
 
   listaProduto: ProdutosServicos[]
+
   constructor(
-    private produtoService: ProdutoService
+    private produtoService: ProdutoService,
+    private categoriaService : CategoriaService
   ) {}
 
   ngOnInit(){
