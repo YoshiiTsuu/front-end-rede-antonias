@@ -21,10 +21,10 @@ export class UsuarioEditComponent implements OnInit {
     private authService: AuthService,
     private router: Router,
     private route: ActivatedRoute
-  ) {}
+  ) {} 
 
   ngOnInit() {
-    window.scroll(0, 0);
+    window.scroll(0,0);
     if (environment.token == '') {
       alert('Sua sessão expirou, faça login novamente')
       this.router.navigate(['/entrar'])
@@ -42,13 +42,32 @@ export class UsuarioEditComponent implements OnInit {
     this.confirmarSenha = event.target.value
   }
 
-  atualizarUsuario(){
-    this.authService.putUsuario(this.usuario).subscribe((resp:Usuario)=>{
+  // }
+  // atualizarUsuario(){
+  //   this.authService.putUsuario(this.usuario).subscribe((resp:Usuario)=>{
+  //     this.usuario = resp
+  //     alert('Usuário atualizado com sucesso!')
+  //     this.router.navigate(['/usuario-editar'])
+  //   })
+  // }
+    atualizarUsuario(){
+  if (this.usuario.senha == this.confirmarSenha) {
+    this.authService.cadastrar(this.usuario).subscribe((resp: Usuario) => {
       this.usuario = resp
-      alert('Usuário atualizado com sucesso!')
-      this.router.navigate(['/usuario-editar'])
-    })
+      this.router.navigate(['/quemsomos'])
+    }) //subscribe serve para que o objeto não seja enviado da forma json
+    alert('Usuário atualizado com sucesso, faça o login novamente.')
+    environment.token = ''
+    environment.nome = ''
+    environment.foto = ''
+    environment.id = 0
+    this.router.navigate(['/entrar'])
+
   }
+  else {
+    alert('As senhas não coincidem!')
+  }
+}
 
   deletarUsuario(){
     this.authService.deleteUsuario(this.idUsuario).subscribe(()=>{
@@ -56,6 +75,6 @@ export class UsuarioEditComponent implements OnInit {
       this.router.navigate(['/usuario-editar'])
     })
   }
-  //falta criar método atualizar dados usuario!
+  //falta criar método atualizar dados usuario! - atualização ok
 
 }

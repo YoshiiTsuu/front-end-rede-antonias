@@ -26,7 +26,7 @@ export class UsuarioComponent implements OnInit {
 
   //(antes) idUsuario: number
   idUsuario = environment.id
-  
+  id = environment.id
   foto = environment.foto
   nome =environment.nome
   constructor(
