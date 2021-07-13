@@ -1,8 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-light cor-bg">
-    <a class="navbar-brand text-light" style="font-size: 17pt;" href="#"><img 
-            src="https://media.discordapp.net/attachments/844560082217074758/860607094951772210/edit-logo1.png" alt=""
+    <a class="navbar-brand text-light" routerLink='/quemsomos' style="font-size: 19pt; font-family: 'Pacifico', cursive;"  >
+        <img src="https://media.discordapp.net/attachments/844560082217074758/860607094951772210/edit-logo1.png" alt=""
             width="50px" height="50px">
-            Rede Antonias
+            Rede Antônias
         </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
         aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
@@ -12,12 +12,12 @@
         <div>
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link text-light" routerLink='/servicos' style="font-size: 12pt;">Ir para serviços
+                    <a class="nav-link text-light" routerLink='/servicos' style="font-size: 12pt; font-family: 'Signika', sans-serif;">Ir para serviços
                         <span class="sr-only">(página
                             atual)</span></a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link text-light" routerLink='/produtos' style="font-size: 12pt;">Ir para produtos
+                    <a class="nav-link text-light" routerLink='/produtos' style="font-size: 12pt; font-family: 'Signika', sans-serif;">Ir para produtos
                         <span class="sr-only">(página
                             atual)</span></a>
                 </li>
@@ -33,15 +33,16 @@
         </div>
         <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
             <li class="nav-item">
-                <a class="nav-link text-light" href="#" style="font-size: 17pt;">Quem somos?</a>
+                <a class="nav-link text-light" href="#" style="font-size: 17pt; font-family: 'Signika', sans-serif;">Quem somos?</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link disabled text-light" routerLink='/usuario' style="font-size: 17pt;">Entrar
+            <li *ngIf='auth.naoLogado()' class="nav-item">
+                <a class="nav-link disabled text-light" routerLink='/usuario' style="font-size: 17pt; font-family: 'Signika', sans-serif;">Entrar
                     <i class="fa fa-user-circle-o" aria-hidden="true"></i>
                 </a>
             </li>
+            <li *ngIf='auth.logado()' class="nav-item"><span>{{nome}}</span></li>
             <li class="nav-item d-flex align-items-center mr-4">
-                <a class="text-light" style="font-size: 25pt;">
+                <a class="text-light" style="font-size: 25pt;font-family: 'Signika', sans-serif;">
                     <i class="fa fa-shopping-cart ml-2"></i>
                 </a>
             </li>

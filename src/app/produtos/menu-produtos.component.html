@@ -34,7 +34,7 @@
 </div>
 
 <div class="container">
-    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+    <div id="carouselExampleFade" class="carousel slide carousel-fade mt-5" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img class="d-block w-100" height="720px"
@@ -68,13 +68,15 @@
         alt="">
 </div>
 
-<div class="d-flex justify-content-between m-5 row ">
-    <div class="card" style="width: 14rem;" *ngFor='let produto of listaProduto'>
-        <!--Criei o <a> para conseguir colocar o redirecionamento quando a pessoa clicar, colocarem todo o card depois-->
-        <a routerLink='/ver-produto'><img class="card-img-top" src="{{produto.midias}}" alt="Imagem de capa do card"></a>
-        <div class="card-body">
-            <p>{{produto.nomeProdutosServicos}}</p>
-            <h4 class="card-text">{{produto.preco}}</h4>
+<div class="container">
+    <div class="d-flex justify-content-around m-3 row mt-5">
+        <div class="card mt-5" style="width: 14rem;" *ngFor='let produto of listaProduto'>
+            <!--Criei o <a> para conseguir colocar o redirecionamento quando a pessoa clicar, colocarem todo o card depois-->
+            <a routerLink='/ver-produto'><img width="100px" height="200px" class="card-img-top" src="{{produto.midias}}" alt="Imagem de capa do card"></a>
+            <div class="card-body">
+                <p>{{produto.nomeProdutosServicos}}</p>
+                <h4 class="card-text">R${{produto.preco}}</h4>
+            </div>
         </div>
     </div>
 </div>

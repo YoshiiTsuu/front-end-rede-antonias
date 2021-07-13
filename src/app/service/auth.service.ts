@@ -40,7 +40,7 @@ export class AuthService {
     return this.http.delete(`https://redeantonias.herokuapp.com/usuario/${id}`, this.token)
   }
 
-/* Tem que fazer isso para finalizar compra (se não estiver logado não vai finalizar a compra)
+ //Tem que fazer isso para finalizar compra (se não estiver logado não vai finalizar a compra)
   logado(){
     let ok : boolean = false
     if(environment.token != ''){
@@ -48,5 +48,14 @@ export class AuthService {
     }
     return ok
   }
-  */
-}
+
+  naoLogado(){
+    let ok: boolean = false
+    if(environment.token == ''){
+      ok = true
+    }
+    return ok
+  }
+  }
+  
+
