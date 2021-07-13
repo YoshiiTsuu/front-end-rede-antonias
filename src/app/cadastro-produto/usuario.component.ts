@@ -23,7 +23,10 @@ export class UsuarioComponent implements OnInit {
   categoria: Categoria = new Categoria()
   idCategoria: number
   usuario: Usuario = new Usuario()
-  idUsuario: number
+
+  //(antes) idUsuario: number
+  idUsuario = environment.id
+  
   foto = environment.foto
   nome =environment.nome
   constructor(
@@ -52,14 +55,6 @@ export class UsuarioComponent implements OnInit {
     this.produto.escolhaServicosProdutos = this.produtoOuServico
   }
 
-  cadastrar() {
-    this.produtoService.postProdutos(this.produto).subscribe((resp: ProdutosServicos) => {
-      this.produto = resp
-      alert('Produto/Serviço cadastrado com sucesso!')
-      this.findAllProdutos()
-      this.produto = new ProdutosServicos
-    })
-  }
   findAllProdutos() {
     this.produtoService.getAllProdutos().subscribe((resp: ProdutosServicos[]) => {
       this.listaProduto = resp
@@ -86,6 +81,24 @@ export class UsuarioComponent implements OnInit {
   findByIdUsuarios(id:number){
     this.authService.getByIdUsuario(id).subscribe((resp:Usuario)=>{
       this.usuario = resp
+    })
+  }
+
+  //Mudei de lugar o cadastrar 
+  cadastrar() {
+
+    //adicionei
+    this.categoria.id = this.idCategoria
+    this.produto.categoria = this.categoria
+    this.usuario.id = this.idUsuario
+    this.produto.usuario = this.usuario
+    //
+
+    this.produtoService.postProdutos(this.produto).subscribe((resp: ProdutosServicos) => {
+      this.produto = resp
+      alert('Produto/Serviço cadastrado com sucesso!')
+      this.findAllProdutos()
+      this.produto = new ProdutosServicos
     })
   }
 

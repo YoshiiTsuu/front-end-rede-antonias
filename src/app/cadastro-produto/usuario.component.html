@@ -82,7 +82,9 @@
                     </label>
                     <select name="categoria" id="categoria" class="form-control" [(ngModel)]='idCategoria'
                         (change)='findByIdCategoria()'>
-                        <option *ngFor='let item of listaCategoria' value={{categoria.id}}>
+                        <option *ngFor='let item of listaCategoria' value={{item.id}} >
+                            <!--Antes value={{categoria.id}}-->
+
                             {{item.produtoServicos}}
                         </option>
                     </select>
@@ -101,12 +103,13 @@
             <hr>
             <h5 class="text-align-center">Produtos Cadastrados</h5>
             <div class="row">
+                <!--Mudei o lista de produto para usuario.produtosServicos-->
                 <div class="card" *ngFor='let produtos of listaProduto' style="width: 18rem;">
                     <img class="card-img-top" src="{{produtos.midias}}" alt="Imagem de capa do card">
                     <div class="card-body">
                         <h5 class="card-title">{{produtos.nomeProdutosServicos}}</h5>
                         <p class="card-text">{{produtos.preco}}</p>
-                        <a [routerLink]="['/produto-editar',produto.id]" class="btn btn-success mr-3">Editar</a>
+                        <a [routerLink]="['/produto-editar',produtos.id]" class="btn btn-success mr-3">Editar</a>
                         <a (click)="deletarProdutos()" class="btn btn-danger">Excluir</a>
                     </div>
                 </div>

@@ -1,3 +1,5 @@
+import { AuthService } from './../../service/auth.service';
+import { Usuario } from './../../model/Usuario';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Categoria } from 'src/app/model/Categoria';
@@ -12,11 +14,17 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class ProdutoEditComponent implements OnInit {
 
-  produto: ProdutosServicos = new ProdutosServicos
+  //Adicionei o () em produto e categoria
+  produto: ProdutosServicos = new ProdutosServicos()
   listaProduto: ProdutosServicos[]
   produtoOuServico: boolean
   idProduto: number
-  categoria: Categoria = new Categoria 
+
+  //Adicionei usuário e o IdUsuário
+  usuario : Usuario = new Usuario()
+  idUsuario = environment.id
+
+  categoria: Categoria = new Categoria() 
   idCategoria: number
   listaCategoria: Categoria[]
 
@@ -25,7 +33,8 @@ export class ProdutoEditComponent implements OnInit {
     private produtoService: ProdutoService,
     private router: Router,
     private route: ActivatedRoute,
-    private categoriaService: CategoriaService
+    private categoriaService: CategoriaService,
+    private authService : AuthService
   ) { }
 
   ngOnInit() {
@@ -36,6 +45,8 @@ export class ProdutoEditComponent implements OnInit {
     }
     let id = this.route.snapshot.params['id']
     this.findByIdProdutos(id)
+    //adicionei o this.findAllCategoria()
+    this.findAllCategoria()
   
   }
 
@@ -48,13 +59,28 @@ export class ProdutoEditComponent implements OnInit {
   findByIdCategoria(){
     this.categoriaService.getByIdCategoria(this.idCategoria).subscribe((resp: Categoria)=> {this.categoria=resp})
   }
+
   findAllCategoria(){
     this.categoriaService.getAllCategoria().subscribe((resp: Categoria[]) => {this.listaCategoria=resp})
   }
 
+  //Adicionei
+  findByIdUsuarios(){
+    this.authService.getByIdUsuario(this.idUsuario).subscribe((resp : Usuario) =>{
+      this.usuario = resp
+    })
+  }
+  //
+
   atualizarProdutos() {
     this.categoria.id = this.idCategoria;
     this.produto.categoria = this.categoria;
+
+    //Adicionei
+    this.usuario.id = this.idUsuario
+    this.produto.usuario = this.usuario
+    //
+
     this.produtoService.putProduto(this.produto).subscribe((resp: ProdutosServicos) => {
       this.produto = resp
       alert('Produto/Serviço atualizado com sucesso!')
