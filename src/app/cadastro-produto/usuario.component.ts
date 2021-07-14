@@ -26,7 +26,7 @@ export class UsuarioComponent implements OnInit {
 
   //(antes) idUsuario: number
   idUsuario = environment.id
-  
+  id = environment.id
   foto = environment.foto
   nome =environment.nome
   constructor(
@@ -115,5 +115,13 @@ export class UsuarioComponent implements OnInit {
       alert('Produto/Serviço apagado com sucesso!')
       this.router.navigate(['/usuario'])
     })
+  }
+
+  sair(){
+    this.router.navigate(['/quemsomos'])
+    environment.token=''
+    environment.nome=''
+    environment.foto=''
+    environment.id=0
   }
 }
