@@ -77,4 +77,12 @@ export class UsuarioEditComponent implements OnInit {
   }
   //falta criar método atualizar dados usuario! - atualização ok
 
+  sair(){
+    this.router.navigate(['/quemsomos'])
+    environment.token=''
+    environment.nome=''
+    environment.foto=''
+    environment.id=0
+  }
+
 }

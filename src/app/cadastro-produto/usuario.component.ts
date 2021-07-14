@@ -116,4 +116,12 @@ export class UsuarioComponent implements OnInit {
       this.router.navigate(['/usuario'])
     })
   }
+
+  sair(){
+    this.router.navigate(['/quemsomos'])
+    environment.token=''
+    environment.nome=''
+    environment.foto=''
+    environment.id=0
+  }
 }
