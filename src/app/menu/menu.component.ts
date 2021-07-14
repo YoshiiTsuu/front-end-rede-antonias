@@ -11,7 +11,7 @@ import { AuthService } from '../service/auth.service';
 })
 export class MenuComponent implements OnInit {
 
-    usuario : Usuario = new Usuario()
+    usuario:Usuario = new Usuario()
     nome = environment.nome
 
   constructor(

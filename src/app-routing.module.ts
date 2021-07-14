@@ -24,7 +24,7 @@ const routes: Routes = [
   { path: 'produto-editar/:id', component: ProdutoEditComponent },
   { path: 'produto-delete/:id', component: ProdutoEditComponent },
   { path: 'usuario-delete/:id', component: UsuarioEditComponent },
-  {path: 'ver-produto', component: VerProdutoComponent} //Não coloquei o id aqui pois não funcionou anteriormente
+  {path: 'ver-produto/:id', component: VerProdutoComponent} //Não coloquei o id aqui pois não funcionou anteriormente
 ];
 
 @NgModule({
