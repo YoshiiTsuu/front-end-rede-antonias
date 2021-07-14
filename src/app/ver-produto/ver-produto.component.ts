@@ -10,20 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VerProdutoComponent implements OnInit {
 
-  /*listaProduto: ProdutosServicos[]*/
+  produto: ProdutosServicos = new ProdutosServicos()
+  listaProduto: ProdutosServicos[]
 
   constructor(
-    private produtoService : ProdutoService,
-    private categoriaService : CategoriaService
+    private produtoService: ProdutoService,
+    private categoriaService: CategoriaService
   ) { }
 
   ngOnInit() {
-    /*this.findAllProdutos()*/
+    window.scroll(0,0)
+    this.findAllProdutos()
   }
-  /**findAllProdutos(){
+  findAllProdutos(){
     this.produtoService.getAllProdutos().subscribe((resp : ProdutosServicos[])=>{
       this.listaProduto=resp
     })
-  }*/
+  }
 
 }

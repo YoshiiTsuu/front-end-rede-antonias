@@ -68,7 +68,7 @@
     <div class="d-flex justify-content-around m-3 row mt-5">
         <div class="card mt-5" style="width: 14rem;" *ngFor='let produto of listaProduto'>
             <!--Criei o <a> para conseguir colocar o redirecionamento quando a pessoa clicar, colocarem todo o card depois-->
-            <a routerLink='/ver-produto'><img width="100px" height="200px" class="card-img-top" src="{{produto.midias}}" alt="Imagem de capa do card"></a>
+            <a [routerLink]="['/ver-produto',produto.id]"><img width="100px" height="200px" class="card-img-top" src="{{produto.midias}}" alt="Imagem de capa do card"></a>
             <div class="card-body">
                 <p>{{produto.nomeProdutosServicos}}</p>
                 <h4 class="card-text">R${{produto.preco}}</h4>
