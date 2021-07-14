@@ -17,6 +17,7 @@ import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component
 import { CadastrarCategoriaComponent } from './cadastrar-categoria/cadastrar-categoria.component';
 import { ServicosComponent } from './servicos/servicos.component';
 import { VerProdutoComponent } from './ver-produto/ver-produto.component';
+import { PgCategoriaComponent } from './pg-categoria/pg-categoria.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { VerProdutoComponent } from './ver-produto/ver-produto.component';
     ProdutoEditComponent,
     CadastrarCategoriaComponent,
     ServicosComponent,
-    VerProdutoComponent
+    VerProdutoComponent,
+    PgCategoriaComponent
   ],
   imports: [
     BrowserModule,

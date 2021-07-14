@@ -30,6 +30,7 @@ export class EntrarComponent implements OnInit {
       environment.nome = this.usuario.nome
       environment.id = this.usuario.id
       environment.email = this.usuario.email
+      //environment.vendedor = this.usuario
     },
       erro => {
         if (erro.status == 500) {

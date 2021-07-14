@@ -1,4 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-light cor-bg">
+<div *ngIf=" router.url !== ('/entrar')">
+<nav  *ngIf=" router.url !== ('/cadastrar')" class="navbar navbar-expand-lg navbar-light cor-bg">
+    <!--Ou não funciona (nem aqui nem na linha 16 e 22)-->
     <a class="navbar-brand text-light" routerLink='/quemsomos'
         style="font-size: 19pt; font-family: 'Pacifico', cursive;">
         <img src="https://media.discordapp.net/attachments/844560082217074758/860607094951772210/edit-logo1.png" alt=""
@@ -12,13 +14,13 @@
     <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
         <div>
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
+                <li *ngIf=" router.url !== '/servicos'" class="nav-item active">
                     <a class="nav-link text-light" routerLink='/servicos'
                         style="font-size: 12pt; font-family: 'Signika', sans-serif;">Ir para serviços
                         <span class="sr-only">(página
                             atual)</span></a>
                 </li>
-                <li class="nav-item active">
+                <li *ngIf=" router.url !== '/produtos'" class="nav-item active">
                     <a class="nav-link text-light" routerLink='/produtos'
                         style="font-size: 12pt; font-family: 'Signika', sans-serif;">Ir para produtos
                         <span class="sr-only">(página
@@ -50,10 +52,11 @@
             <div class="nav-link disabled text-light dropdown" *ngIf='auth.logado()'>
                 <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    {{usuario.nome}}Botão dropdown
+                    {{usuario.nome}}Menu
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" routerLink='/usuario'>Editar dados pessoais</a>
+                    <a class="dropdown-item" routerLink='/usuario' *ngIf='auth.vendedor()'>Cadastrar Produtos</a>
+                    <a class="dropdown-item" [routerLink]="['/usuario',usuario.id]">Editar dados pessoais</a>
                     <a class="dropdown-item" (click)='sair()'>Sair</a>
                 </div>
             </div>
@@ -67,3 +70,4 @@
         </ul>
     </div>
 </nav>
+</div>
