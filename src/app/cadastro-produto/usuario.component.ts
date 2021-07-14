@@ -37,7 +37,7 @@ export class UsuarioComponent implements OnInit {
     private authService: AuthService
   ) { }
 
-  ngOnInit() {
+  ngOnInit() { 
     window.scroll(0, 0);
     if (environment.token == '') {
       alert('Sua sessão expirou, faça login novamente')
@@ -78,7 +78,7 @@ export class UsuarioComponent implements OnInit {
     })
   }
   // Esta parte não funciona É O FINDBYUSUARIO! PRA PODER USAR O GET ID NO BOTÃO DE EDITAR DADOS PESSOAIS 
-  findByIdUsuarios(id:number){
+  findByIdUsuario(id:number){
     this.authService.getByIdUsuario(id).subscribe((resp:Usuario)=>{
       this.usuario = resp
     })
@@ -94,7 +94,7 @@ export class UsuarioComponent implements OnInit {
     this.produto.usuario = this.usuario
     //
 
-    this.produtoService.postProdutos(this.produto).subscribe((resp: ProdutosServicos) => {
+    this.produtoService.postProdutos(this.produto).subscribe((resp: ProdutosServicos) => { 
       this.produto = resp
       alert('Produto/Serviço cadastrado com sucesso!')
       this.findAllProdutos()
