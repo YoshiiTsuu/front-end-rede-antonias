@@ -1,15 +1,15 @@
 <div class="row">
-  <div class="d-flex justify-content-center align-content">
-    <div class="col-6 d-flex justify-content-center align-items-center container-fluid">
-      <div class="d-flex flex-column align-items-center">
+  <div class="d-flex justify-content-center align-content" style="margin-bottom: 20px;">
+    <div class="col-3 d-flex d-flex align-items-center container-fluid">
+      
         <div style="width:540px ; height:532px">
           <img class=""
             src="https://media.discordapp.net/attachments/844560082217074758/860252119759454228/edit-logo.png"
             alt="Logo Rede Antônias">
         </div>
-      </div>
+      
     </div>
-    <div class="card d-flex justify-content-center col-6 align-items-center mt-5" style="width: 45rem;">
+    <div class="card d-flex justify-content-center col-7 align-items-center" style="width: 45rem; padding-top: 20px;">
       <h2 class="my-5">Cadastre-se</h2>
       <form>
         <div class="form-row mb-2">
@@ -49,7 +49,7 @@
             </div>
             <div class="my-5 text-center row">
               <div class="col-6 ">
-                <input type="radio" id='vendedora' value='1' name='vendedora' (click)="setRadio(true)"> <strong> vendedora</strong>
+                <input type="radio" id='vendedora' value='1' name='vendedora' (click)="setRadio(true)"> <strong> Vendedora</strong>
                 <img width="250" height="200px" src="https://i.imgur.com/GP8GuEe.png" alt="vendedorClick">
               </div>
               <div class="col-6">
@@ -59,8 +59,9 @@
             </div>
           </div>
         </div>
-    <div class="d-flex justify-content-center kg-16">
+    <div class="d-flex justify-content-around margens">
       <button type="submit" class="btn btn-success" (click)='cadastrar()'>Cadastrar</button>
+      <button type="submit" class="btn btn-danger" routerLink='/entrar'>Cancelar</button>
     </div>
     </form>
     <hr>

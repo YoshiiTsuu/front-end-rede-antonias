@@ -17,6 +17,8 @@ import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component
 import { CadastrarCategoriaComponent } from './cadastrar-categoria/cadastrar-categoria.component';
 import { ServicosComponent } from './servicos/servicos.component';
 import { VerProdutoComponent } from './ver-produto/ver-produto.component';
+import { ProdutoArtesanaisComponent } from './produto-artesanais/produto-artesanais.component';
+import { ProdutosVestuarioComponent } from './produtos-vestuario/produtos-vestuario.component';
 
 
 @NgModule({
@@ -33,7 +35,9 @@ import { VerProdutoComponent } from './ver-produto/ver-produto.component';
     ProdutoEditComponent,
     CadastrarCategoriaComponent,
     ServicosComponent,
-    VerProdutoComponent
+    VerProdutoComponent,
+    ProdutoArtesanaisComponent,
+    ProdutosVestuarioComponent
   ],
   imports: [
     BrowserModule,

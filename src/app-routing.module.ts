@@ -10,6 +10,7 @@ import { UsuarioEditComponent } from './app/edit/usuario-edit-delete/usuario-edi
 import { ProdutoEditComponent } from './app/edit/produto-edit/produto-edit.component';
 import { CadastrarCategoriaComponent } from './app/cadastrar-categoria/cadastrar-categoria.component';
 import { ServicosComponent } from './app/servicos/servicos.component';
+import { ProdutoArtesanaisComponent } from './app/produto-artesanais/produto-artesanais.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'quemsomos', pathMatch: 'full' },
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'produto-editar/:id', component: ProdutoEditComponent },
   { path: 'produto-delete/:id', component: ProdutoEditComponent },
   { path: 'usuario-delete/:id', component: UsuarioEditComponent },
+  {path: 'produtos-artesanais' , component: ProdutoArtesanaisComponent},
   {path: 'ver-produto', component: VerProdutoComponent} //Não coloquei o id aqui pois não funcionou anteriormente
 ];
 
