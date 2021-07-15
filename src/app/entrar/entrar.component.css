@@ -1,5 +1,8 @@
+
 .bg-main-theme{
    background-color: #FFE4CF;
+   min-width: 100vw;
+   min-height: 100vh;
 }
 .txtcadastrar{
    font-size: 14px;
