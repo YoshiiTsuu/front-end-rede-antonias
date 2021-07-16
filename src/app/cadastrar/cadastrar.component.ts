@@ -23,17 +23,24 @@ export class CadastrarComponent implements OnInit {
   confirmSenha(event: any) {
     this.confirmarSenha = event.target.value
   }
-  setRadio(resp: string) {
+  /*setRadio(resp: string) {
     this.tipoUsuario = resp
     this.usuario.vendedor = this.tipoUsuario
+  }*/
+
+  tipoUser(event: any){
+    this.tipoUsuario = event.target.value
   }
+
   cadastrar() {
+    this.usuario.vendedor = this.tipoUsuario
     if (this.usuario.senha == this.confirmarSenha) {
       this.authService.cadastrar(this.usuario).subscribe((resp: Usuario) => {
         this.usuario = resp
         this.router.navigate(['/entrar'])
+        alert('Cadastro concluído com sucesso!')
       }) //subscribe serve para que o objeto não seja enviado da forma json
-      alert('Cadastro concluído com sucesso!')
+     
 
     }
     else {
