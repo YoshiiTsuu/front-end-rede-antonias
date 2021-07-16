@@ -1,3 +1,10 @@
 .cor-bg{
     background-color: #bd5d3fe8;
 }
+.rodape {
+    height: 50px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin-bottom: 0px;
+}

@@ -57,9 +57,11 @@ export class AuthService {
     return ok
   }
 
+  // Thiago ajuda noois pufavô, esse enviroment deveria ser uma string porem só aceita boolean
   vendedor(){
     let ok: boolean = false
-    if(environment.vendedor == true){
+
+    if (environment.vendedor ==true){
       ok = true
     }
     return ok

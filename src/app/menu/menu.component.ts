@@ -13,7 +13,8 @@ export class MenuComponent implements OnInit {
 
     usuario:Usuario = new Usuario()
     nome = environment.nome
-
+    id = environment.id
+    
   constructor(
     public auth: AuthService,
     public router : Router
@@ -21,6 +22,11 @@ export class MenuComponent implements OnInit {
 
   ngOnInit() {
     window.scroll(0, 0);
+  }
+  findByIdUsuarios(id:number){
+    this.auth.getByIdUsuario(id).subscribe((resp:Usuario)=>{
+      this.usuario = resp
+    })
   }
 
   sair(){
