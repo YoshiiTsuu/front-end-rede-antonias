@@ -6,7 +6,7 @@ export class Usuario{
     public foto : string
     public email : string
     public senha : string
-    public vendedor : boolean
+    public vendedor : string
     public dataAniversario : Date
     public produtosServicos : ProdutosServicos []
 }

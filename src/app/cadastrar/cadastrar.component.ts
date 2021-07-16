@@ -12,7 +12,7 @@ export class CadastrarComponent implements OnInit {
 
   usuario: Usuario = new Usuario;
   confirmarSenha: string;
-  tipoUsuario: boolean;
+  tipoUsuario: string;
   constructor(
     private authService: AuthService,
     private router: Router
@@ -23,7 +23,7 @@ export class CadastrarComponent implements OnInit {
   confirmSenha(event: any) {
     this.confirmarSenha = event.target.value
   }
-  setRadio(resp: boolean) {
+  setRadio(resp: string) {
     this.tipoUsuario = resp
     this.usuario.vendedor = this.tipoUsuario
   }
