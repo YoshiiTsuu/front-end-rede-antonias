@@ -5,5 +5,6 @@ export class Categoria{
     public produtoServicos : string
     public palavraChave : string
     public descricao : string
+    public categoria: string
     public servicos : ProdutosServicos[]
 }

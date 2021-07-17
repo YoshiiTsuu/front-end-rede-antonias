@@ -1,11 +1,14 @@
 <div class="cor-bg2">
     <div class=" container" style="height: 40px;">
         <div class="row">
-            <div class="col d-flex justify-content-center" style="margin-top: 8px;">
-                <a [routerLink]="['/produtos-categorias',categoria.id]" class=" text-light">Artesanais
+            <div 
+            class="col d-flex justify-content-center" 
+            style="margin-top: 8px;"
+            *ngFor="let item of listaCategoria">
+                <a [routerLink]="['/produtos-categorias',item.id]" class=" text-light">{{item.categoria}}
                 </a>
             </div>
-            <div class="col d-flex justify-content-center" style="margin-top: 8px;">
+            <!-- <div class="col d-flex justify-content-center" style="margin-top: 8px;">
                 <a [routerLink]="['/produtos-categorias',categoria.id]" class=" text-light">Vestuario</a>
             </div>
             <div class="col d-flex justify-content-center" style="margin-top: 8px;">
@@ -25,7 +28,7 @@
             </div>
             <div class="col d-flex justify-content-center" style="margin-top: 8px;">
                 <a href="" class=" text-light">Outros</a>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>

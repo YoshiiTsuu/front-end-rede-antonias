@@ -15,7 +15,6 @@ export class MenuProdutosComponent implements OnInit {
   categoria: Categoria = new Categoria()
   idCategoria:number
   listaCategoria: Categoria[]
-
   listaProduto: ProdutosServicos[]
 
   constructor(
@@ -28,6 +27,7 @@ export class MenuProdutosComponent implements OnInit {
   ngOnInit(){
     window.scroll(0, 0);
     this.findAllProdutos()
+    this.findAllCategoria()
     this.idCategoria = this.route.snapshot.params['id']
     this.findByIdCategoria(this.idCategoria)
   }
@@ -36,6 +36,11 @@ export class MenuProdutosComponent implements OnInit {
     this.produtoService.getAllProdutos().subscribe((resp: ProdutosServicos[]) => {
       this.listaProduto = resp
     }) 
+  }
+  findAllCategoria(){
+    this.categoriaService.getAllCategoria().subscribe((resp:Categoria[])=>{
+      this.listaCategoria = resp
+    })
   }
 
   findByIdCategoria(id:number){
