@@ -29,6 +29,7 @@ export class UsuarioComponent implements OnInit {
   id = environment.id
   foto = environment.foto
   nome =environment.nome
+  
   constructor(
     private produtoService: ProdutoService,
     private router: Router,

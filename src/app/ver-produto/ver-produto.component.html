@@ -78,13 +78,13 @@
 </div>
 <div class="container">
     <div class="row">
-        <div class="col-3 text-center">
-            <h5 class="mt-5 cor-teste text-white">Outros produtos</h5>
+        <div class="col-5 text-center">
+            <h5 class="mt-5 cor-teste text-white txt-size">Outros produtos</h5>
         </div>
     </div>
     <div class="row">
         <div class="d-flex justify-content-around m-3 row ">
-            <div class="card mt-5" style="width: 14rem;" *ngFor='let produto of listaProduto'>
+            <div class="card mt-3" style="width: 14rem;" *ngFor='let produto of listaProduto'>
                 <!--Criei o <a> para conseguir colocar o redirecionamento quando a pessoa clicar, colocarem todo o card depois-->
                 <a routerLink='/ver-produto'><img width="100px" height="200px" class="card-img-top"
                         src="{{produto.midias}}" alt="Imagem de capa do card"></a>

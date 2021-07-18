@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from './../../service/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment.prod';
+import { CoreEnvironment } from '@angular/compiler/src/compiler_facade_interface';
 
 @Component({
   selector: 'app-usuario-edit',
@@ -12,14 +13,14 @@ import { environment } from 'src/environments/environment.prod';
 export class UsuarioEditComponent implements OnInit {
 
   usuario: Usuario = new Usuario;
-  idUsuario : number;
+  idUsuario = environment.id
   nome = environment.nome;
   foto = environment.foto;
   confirmarSenha: string;
 
   constructor(
     private authService: AuthService,
-    private router: Router,
+    public router: Router,
     private route: ActivatedRoute
   ) {} 
 
@@ -34,7 +35,7 @@ export class UsuarioEditComponent implements OnInit {
   }
 
   findByIdUsuario(id:number){
-    this.authService.getByIdUsuario(id).subscribe((resp:Usuario)=>{
+    this.authService.getByIdUsuario(this.idUsuario).subscribe((resp:Usuario)=>{
       this.usuario = resp
     })
   }
