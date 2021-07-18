@@ -21,8 +21,24 @@
 
 .cor-teste{
 
-    background-color:  #672901;
+    /*background-color:  #672901;*/
+    /*background-color: #3f2516;*/
+    background-color: #1B0C01;
+
+    /*1B0C01*/
+    /*221309*/
     /*
     #100f0d; #672901; #a05744; #bf7e6a; #d7baa8; #d9d4d1, #f8f3ef; #ffe4cf; 
     */
+}
+
+.cor-teste2{
+
+    background-color: #664126 ;
+}
+
+.cor-teste3{
+
+    /*background-color: #664126;*/
+    background-color: #695343 ;
 }
