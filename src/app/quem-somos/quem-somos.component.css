@@ -10,3 +10,16 @@
 .estica{
     min-width: 100vw;
 }
+
+.fa{
+    color: #777777;
+    font-size: 25pt;
+}
+
+.fa-linkedin-square:hover{
+    color: #0e76a8;
+}
+
+.fa-github:hover{
+    color: #000000;
+}
