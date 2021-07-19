@@ -1,55 +1,96 @@
-<form>
-    <div class="form-group row">
-        <label for="nome" class="col-sm-2 col-form-label text-center">Nome</label>
-        <div class="col-sm-10">
-            <input [(ngModel)]='produto.nomeProdutosServicos' type="text" class="form-control" id="nome" name="nome"
-                placeholder="Digite o nome do produto">
+<div class="container-fluid mb-4">
+    <div class="mt-lg-5" style="margin-left: 0px;">
+        <div class="row">
+            <div class="col-md-4" style="margin-left: 0px;">
+                <div class="card text-marrom card-cor" style="width: 30rem; height: 25rem;">
+                    <div style="width:270px ; height:266 px" class="container">
+                        <img class="card-img-top my-3" src="{{foto}}" alt="Logo Rede Antônias">
+                    </div>
+                    <h3 class="text-center">Olá, {{nome}}</h3>
+                    <div class="card-body">
+                        <div class="d-flex flex-column">
+                            <!--mundando idUser para id
+                            <button class="mt-2">Curtidas</button>
+                            mostrar as qts de curtidas vendedor
+                            <button class="mt-2">Descurtidas</button>-->
+                            <button class="btn btn-light mt-2" [routerLink]="['/usuario-editar', id]">Editar dados
+                                pessoais</button>
+                            <button class="btn btn-light btn-sair" (click)='sair()'>Sair</button>
+                            <!--<button class="mt-2">Excluir conta</button>-->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7 ml-5">
+                <div class="card card-cor text-marrom ">
+                    <h2 class="text-center  mb-4 mt-3"> Editar Produto</h2>
+                    <form>
+                        <div class="form-group ml-5">
+                            <label for="nome" class="col-sm-4 col-form-label ">Nome do produto</label>
+                            <div class="col-sm-10">
+                                <input [(ngModel)]='produto.nomeProdutosServicos' type="text" class="form-control"
+                                    id="nome" name="nome" placeholder="Digite o nome do produto">
+                            </div>
+                        </div>
+                        <div class="form-group ml-5">
+                            <label for="descricao" class="col-sm-2 col-form-label">Descrição</label>
+                            <div class="col-sm-10">
+                                <textarea [(ngModel)]='produto.descricao' class="form-control" name="descricao"
+                                    id="descricao" rows="3"
+                                    placeholder="Digite a descrição do produto/serviço..."></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group ml-5">
+                            <label for="preco" class="col-sm-2 col-form-label">Preço</label>
+                            <div class="col-sm-10">
+                                <input [(ngModel)]='produto.preco' type="number" class="form-control m-0" id="preco"
+                                    name="preco" placeholder="Digite o valor do produto/serviço">
+                            </div>
+                        </div>
+
+                        <div class="form-group ml-5">
+                            <label for="estoque" class="col-sm-2 col-form-label">Estoque</label>
+                            <div class="col-sm-10">
+                                <input [(ngModel)]='produto.estoqueVendedor' type="number" class="form-control"
+                                    id="estoque" name="estoque" placeholder="Digite a quantidade em estoque">
+                            </div>
+                        </div>
+
+                        <div class="form-group ml-5">
+                            <label class="col-sm-4 col-form-label" for="categoria">Escolha uma Categoria:</label>
+                            <div class="col-sm-10">
+                                <select name="categoria" id="categoria" class="form-control" [(ngModel)]='idCategoria'
+                                    (change)='findByIdCategoria()'>
+                                    <option *ngFor='let item of listaCategoria' value={{item.id}}>
+                                        <!--Antes value={{categoria.id}}-->
+
+                                        {{item.categoria}}
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group ml-5">
+                            <label for="foto" class="col-sm-4 col-form-label">Link da foto do produto</label>
+                            <div class="col-sm-10">
+                                <input [(ngModel)]='produto.midias' type="text" class="form-control" id="foto"
+                                    placeholder="Insira o link da foto do produto" name="foto">
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-center mb-4">
+                            <button type="submit" class="btn btn-danger mr-5" routerLink='/usuario'>Cancelar</button>
+                            <button type="submit" class="btn btn-success"
+                                (click)='atualizarProdutos()'>Atualizar</button>
+                            <!-- <button (click)="deletarProdutos()" class="btn btn-danger">Excluir</button> -->
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+
         </div>
     </div>
-    <div class="form-group row">
-        <label for="descricao" class="col-sm-2 col-form-label text-center">Descrição</label>
-        <textarea [(ngModel)]='produto.descricao' class="col-sm-10 form-control" name="descricao" id="descricao"
-            rows="3" placeholder="Digite a descrição do produto/serviço..."></textarea>
-    </div>
-    <div class="form-group row">
-        <label for="preco" class="col-sm-2 col-form-label text-center">Preço</label>
-        <div class="col-sm-10">
-            <input [(ngModel)]='produto.preco' type="number" class="form-control m-0" id="preco" name="preco"
-                placeholder="Digite o valor do produto/serviço">
-        </div>
-    </div>
-
-
-    <div class="form-group row">
-        <label for="estoque" class="col-sm-2 col-form-label text-center">Estoque</label>
-        <div class="col-sm-10">
-            <input [(ngModel)]='produto.estoqueVendedor' type="number" class="form-control" id="estoque" name="estoque"
-                placeholder="Digite a quantidade em estoque">
-        </div>
-    </div>
-    <div class="form-group row">
-        <label for="categoriaServico" class="col-sm-2 col-form-label text-center">Escolha uma categoria</label>
-
-        <!--Mudei o slect que estava antes para o que a gente está usando-->
-        <select name="categoria" id="categoria" class="form-control" [(ngModel)]='idCategoria'
-            (change)='findByIdCategoria()'>
-            <option *ngFor='let item of listaCategoria' value={{item.id}}>
-                <!--Antes o value={{categoria.id}}-->
-                {{item.produtoServicos}}
-            </option>
-        </select>
-
-        <!--/Mudei o slect que estava antes para o que a gente está usando-->
-    </div>
-    <div class="form-group row">
-        <label for="foto" class="col-sm-2 col-form-label text-center">Link da foto do produto</label>
-        <div class="col-sm-10">
-            <input [(ngModel)]='produto.midias' type="text" class="form-control" id="foto"
-                placeholder="Insira o link da foto do produto" name="foto">
-        </div>
-    </div>
-</form>
-<!--Adicionei o botão cancelar e a rota-->
-<button class="btn btn-danger mr-3" routerLink='/usuario'>Cancelar</button>
-<button class="btn btn-success" (click)='atualizarProdutos()'>Atualizar</button>
-<button (click)="deletarProdutos()" class="btn btn-danger">Excluir</button>
+</div>

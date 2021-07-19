@@ -26,6 +26,10 @@ export class ProdutoEditComponent implements OnInit {
   idCategoria: number
   listaCategoria: Categoria[]
 
+  id = environment.id
+  foto = environment.foto
+  nome =environment.nome
+
 
   constructor(
     private produtoService: ProdutoService,
@@ -93,4 +97,13 @@ export class ProdutoEditComponent implements OnInit {
       this.router.navigate(['/usuario'])
     })
   }
+
+  sair(){
+    this.router.navigate(['/quemsomos'])
+    environment.token=''
+    environment.nome=''
+    environment.foto=''
+    environment.id=0
+  }
+
 }
