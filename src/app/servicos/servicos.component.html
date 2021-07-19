@@ -73,7 +73,7 @@
         </a> -->
     </div>
 
-    <div class="d-flex justify-content-between m-5 row mt-3">
+    <div class="d-flex justify-content-between m-3 row">
         <div class="card mt-5" style="width: 14rem;" *ngFor='let produto of listaProduto' [routerLink]="['/ver-produto',produto.id]">
                 <img class="card-img-top" width="100px" height="200px" src="{{produto.midias}}"
                     alt="Imagem de capa do card">
