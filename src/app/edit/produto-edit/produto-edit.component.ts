@@ -19,11 +19,9 @@ export class ProdutoEditComponent implements OnInit {
   listaProduto: ProdutosServicos[]
   produtoOuServico: boolean
   idProduto: number
-
   //Adicionei usuário e o IdUsuário
   usuario : Usuario = new Usuario()
   idUsuario = environment.id
-
   categoria: Categoria = new Categoria() 
   idCategoria: number
   listaCategoria: Categoria[]
@@ -47,6 +45,7 @@ export class ProdutoEditComponent implements OnInit {
     this.findByIdProdutos(id)
     //adicionei o this.findAllCategoria()
     this.findAllCategoria()
+    this.deletarProdutos()
   
   }
 
@@ -88,8 +87,8 @@ export class ProdutoEditComponent implements OnInit {
     })
   }
 
-  deletarProdutos() {
-    this.produtoService.deleteProduto(this.idProduto).subscribe(() => {
+  deletarProdutos(){
+    this.produtoService.deleteProduto(this.idProduto).subscribe(()=>{
       alert('Produto/Serviço apagado com sucesso!')
       this.router.navigate(['/usuario'])
     })

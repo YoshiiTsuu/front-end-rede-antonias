@@ -11,6 +11,7 @@ import { AuthService } from '../service/auth.service';
 })
 export class MenuComponent implements OnInit {
 
+
     usuario:Usuario = new Usuario
     idUsuario=environment.id
     nome = environment.nome
@@ -21,6 +22,7 @@ export class MenuComponent implements OnInit {
     public auth: AuthService,
     public router : Router,
     private route: ActivatedRoute
+
   ) { }
 
   ngOnInit() {
@@ -34,11 +36,12 @@ export class MenuComponent implements OnInit {
   }
 
 
+
   sair(){
     this.router.navigate(['/quemsomos'])
-    environment.token=''
-    environment.nome=''
-    environment.foto=''
-    environment.id=0
+    environment.token = ''
+    environment.nome = ''
+    environment.foto = ''
+    environment.id = 0
   }
 }
