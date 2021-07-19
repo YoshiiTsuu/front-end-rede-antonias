@@ -20,6 +20,10 @@ export class AuthService {
 
   /*Entrar, cadastrar, atualizar e deletar */
 
+  getAllUsuario():Observable<Usuario[]>{
+    return this.http.get<Usuario[]>('https://redeantonias.herokuapp.com/usuario',this.token)
+  }
+  
   getByIdUsuario(id:number): Observable<Usuario>{
     return this.http.get<Usuario>(`https://redeantonias.herokuapp.com/usuario/${id}`,this.token)
   }
@@ -35,6 +39,8 @@ export class AuthService {
   putUsuario(user: Usuario) : Observable<Usuario>{
     return this.http.put<Usuario>('https://redeantonias.herokuapp.com/usuario/atualizar', user, this.token)
   }
+
+
 
   deleteUsuario(id:number){
     return this.http.delete(`https://redeantonias.herokuapp.com/usuario/${id}`, this.token)
