@@ -15,8 +15,6 @@ export class MenuComponent implements OnInit {
     idUsuario=environment.id
     id = environment.id
 
-    
-
   constructor(
     public auth: AuthService,
     public router : Router,
