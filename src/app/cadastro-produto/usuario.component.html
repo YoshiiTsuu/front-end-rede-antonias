@@ -16,7 +16,6 @@
                         mostrar as qts de curtidas vendedor
                         <button class="mt-2">Descurtidas</button>-->
                             <button class="btn btn-light btn-sair" (click)='sair()'>Sair</button>
-                            <!--fazer hover-->
                             <!--<button class="mt-2">Excluir conta</button>-->
                         </div>
                     </div>
@@ -104,30 +103,19 @@
                         <h5 class="mt-5 cor-teste text-white txt-size">Produtos Cadastrados</h5>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="d-flex justify-content-around m-3 row ">
-                        <div class="card m-4" *ngFor='let produtos of listaProduto' style="width: 18rem;">
-                            <img class="card-img-top" src="{{produtos.midias}}" alt="Imagem de capa do card">
-                            <div class="card-body">
-                                <h5 class="card-title">{{produtos.nomeProdutosServicos}}</h5>
-                                <p class="card-text">R${{produtos.preco}}</p>
-                                <a [routerLink]="['/produto-editar',produtos.id]"
-                                    class="btn btn-success mr-3">Editar</a>
+                <div class="d-flex justify-content-around m-3 row">
+                    <div class="card mt-5" style="width: 14rem;" *ngFor='let produto of listaProduto'>
+                        <!--Criei o <a> para conseguir colocar o redirecionamento quando a pessoa clicar, colocarem todo o card depois-->
+                        <a [routerLink]="['/ver-produto',produto.id]"><img width="100px" height="200px"
+                                class="card-img-top" src="{{produto.midias}}" alt="Imagem de capa do card"></a>
+                        <div class="card-body">
+                            <p>{{produto.nomeProdutosServicos}}</p>
+                            <h4 class="card-text">R${{produto.preco}}</h4>
+                            <a [routerLink]="['/produto-editar',produto.id]" class="btn btn-success mr-3">Editar</a>
                                 <a (click)="deletarProdutos()" class="btn btn-danger">Excluir</a>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!--  <div class="container ml-0">
-                <div class="col-3 mb-4 text-center pl-0">
-                    <h5 class="mt-5 cor-teste text-white">Produtos Cadastrados</h5>
-                </div>
-                <div class="container mb-3">
-                    Mudei o lista de produto para usuario.produtosServicos
-                   
-                </div>
-            </div>-->
         </div>
     </div>
-</div>
