@@ -53,7 +53,7 @@ export class UsuarioEditComponent implements OnInit {
   // }
     atualizarUsuario(){
   if (this.usuario.senha == this.confirmarSenha) {
-    this.authService.cadastrar(this.usuario).subscribe((resp: Usuario) => {
+    this.authService.putUsuario(this.usuario).subscribe((resp: Usuario) => {
       this.usuario = resp
       this.router.navigate(['/quemsomos'])
     }) //subscribe serve para que o objeto não seja enviado da forma json
