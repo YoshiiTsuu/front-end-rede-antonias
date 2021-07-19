@@ -1,5 +1,5 @@
 import { Usuario } from './../model/Usuario';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment.prod';
 import { AuthService } from '../service/auth.service';
@@ -11,17 +11,28 @@ import { AuthService } from '../service/auth.service';
 })
 export class MenuComponent implements OnInit {
 
-    usuario:Usuario = new Usuario()
+    usuario:Usuario = new Usuario
+    idUsuario=environment.id
     nome = environment.nome
+    vendedor = environment.vendedor
+    id = environment.id
 
   constructor(
     public auth: AuthService,
-    public router : Router
+    public router : Router,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
     window.scroll(0, 0);
+    }
+
+  findByIdUsuarios(id:number){
+    this.auth.getByIdUsuario(id).subscribe((resp:Usuario)=>{
+      this.usuario = resp
+    })
   }
+
 
   sair(){
     this.router.navigate(['/quemsomos'])
