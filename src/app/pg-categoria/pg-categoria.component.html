@@ -11,7 +11,6 @@
         </div>
     </div>
 </div>
-
 <div class="container-fluid cor-teste3 cor-fundo">
     <div class="container">
         <h1 class="text-center ">{{categoria.categoria}}</h1>
@@ -21,7 +20,8 @@
 </div>
 <div class="container">
     <div class="d-flex justify-content-around m-3 row mt-5">
-        <div class="card mt-5" style="width: 14rem;" *ngFor='let produto of listaProduto'>
+        <ng-container *ngFor='let produto of listaProduto'>
+        <div class="card mt-5" style="width: 14rem;" *ngIf="produto.categoria.id == idCategoria">
             <!--Criei o <a> para conseguir colocar o redirecionamento quando a pessoa clicar, colocarem todo o card depois-->
             <a routerLink='/ver-produto'><img width="100px" height="200px" class="card-img-top" src="{{produto.midias}}"
                     alt="Imagem de capa do card"></a>
@@ -30,5 +30,6 @@
                 <h4 class="card-text">R${{produto.preco}}</h4>
             </div>
         </div>
+    </ng-container>
     </div>
 </div>
