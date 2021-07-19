@@ -41,24 +41,29 @@
             <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a class="nav-link text-light" href="#">Quem somos?</a>
+
                 </li>
                 <li *ngIf='auth.naoLogado()' class="nav-item">
                     <a class="nav-link disabled text-light" routerLink='/usuario'>Entrar
                         <i class="fa fa-user-circle-o" aria-hidden="true"></i>
                     </a>
                 </li>
-                <div class="nav-link disabled text-light dropdown" *ngIf='auth.logado()'>
-                    <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        {{usuario.nome}}Menu
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" routerLink='/usuario'>Cadastrar Produtos</a>
-                        <a class="dropdown-item" [routerLink]="['/usuario-editar', id]">Editar dados pessoais</a>
-                        <a class="dropdown-item" (click)='sair()'>Sair</a>
+                <!--Menu Vendedora-->
+                <ng-container *ngIf='auth.logado()'>
+                    <div class="nav-link disabled text-light dropdown">
+                        <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            {{auth.dadosUsuario().nome}}
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" routerLink='/usuario'>Cadastrar Produtos</a>
+                            <a class="dropdown-item" [routerLink]="['/usuario-editar',auth.dadosUsuario().id]">Editar
+                                dados pessoais</a>
+                            <a class="dropdown-item" (click)='sair()'>Sair</a>
+                        </div>
                     </div>
-                    
-                </div>
+                </ng-container>
+
                 <li class="nav-item d-flex align-items-center mr-4">
                     <a class="text-light" style="font-size: 20pt;">
                         <i class="fa fa-shopping-cart ml-2"></i>
