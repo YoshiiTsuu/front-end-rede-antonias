@@ -17,7 +17,8 @@ import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component
 import { CadastrarCategoriaComponent } from './cadastrar-categoria/cadastrar-categoria.component';
 import { ServicosComponent } from './servicos/servicos.component';
 import { VerProdutoComponent } from './ver-produto/ver-produto.component';
-import { PgCategoriaComponent } from './pg-categoria/pg-categoria.component';
+import { PgCategoriaComponent } from './pg-categoria-produtos/pg-categoria.component';
+import { PgCategoriaServicosComponent } from './pg-categoria-servicos/pg-categoria-servicos.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { PgCategoriaComponent } from './pg-categoria/pg-categoria.component';
     CadastrarCategoriaComponent,
     ServicosComponent,
     VerProdutoComponent,
-    PgCategoriaComponent
+    PgCategoriaComponent,
+    PgCategoriaServicosComponent
   ],
   imports: [
     BrowserModule,
