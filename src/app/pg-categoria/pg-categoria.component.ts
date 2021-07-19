@@ -16,33 +16,43 @@ export class PgCategoriaComponent implements OnInit {
   listaProduto: ProdutosServicos[]
 
   categoria: Categoria = new Categoria()
-  idCategoria : number
+  idCategoria: number
   listaCategoria: Categoria[]
 
   constructor(
-    private categoriaService : CategoriaService,
-    private produtoService : ProdutoService,
-    private router : Router,
-    private route : ActivatedRoute
+    private categoriaService: CategoriaService,
+    private produtoService: ProdutoService,
+    private router: Router,
+    private route: ActivatedRoute
   ) { }
 
-  ngOnInit(){
+  ngOnInit() {
     window.scroll(0, 0);
     this.idCategoria = this.route.snapshot.params['id']
     this.findByIdCategoria()
     this.findAllProdutos()
+    this.findAllCategoria()
   }
 
-  findByIdCategoria(){
-    this.categoriaService.getByIdCategoria(this.idCategoria).subscribe((resp:Categoria)=>{
-      this.categoria=resp
+  findByIdCategoria() {
+    this.categoriaService.getByIdCategoria(this.idCategoria).subscribe((resp: Categoria) => {
+      this.categoria = resp
     })
   }
 
   findAllProdutos() {
     this.produtoService.getAllProdutos().subscribe((resp: ProdutosServicos[]) => {
       this.listaProduto = resp
-    }) 
+    })
   }
-
+  findAllCategoria() {
+    this.categoriaService.getAllCategoria().subscribe((resp: Categoria[]) => {
+      this.listaCategoria = resp
+    })
+  }
+  refresh(idCat: number){
+    this.router.navigateByUrl('/quemsomos', { skipLocationChange: true }).then(() =>{
+         this.router.navigate(['/produtos-categorias',idCat])
+    })
+  }
 }

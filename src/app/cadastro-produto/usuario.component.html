@@ -111,14 +111,15 @@
                             <div class="card-body">
                                 <h5 class="card-title">{{produtos.nomeProdutosServicos}}</h5>
                                 <p class="card-text">R${{produtos.preco}}</p>
-                                <a [routerLink]="['/produto-editar',produtos.id]" class="btn btn-success mr-3">Editar</a>
+                                <a [routerLink]="['/produto-editar',produtos.id]"
+                                    class="btn btn-success mr-3">Editar</a>
                                 <a (click)="deletarProdutos()" class="btn btn-danger">Excluir</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-          <!--  <div class="container ml-0">
+            <!--  <div class="container ml-0">
                 <div class="col-3 mb-4 text-center pl-0">
                     <h5 class="mt-5 cor-teste text-white">Produtos Cadastrados</h5>
                 </div>

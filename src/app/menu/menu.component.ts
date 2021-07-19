@@ -11,23 +11,27 @@ import { AuthService } from '../service/auth.service';
 })
 export class MenuComponent implements OnInit {
 
-    usuario:Usuario = new Usuario()
-    nome = environment.nome
-
+  usuario: Usuario = new Usuario()
+  nome = environment.nome
+  id = environment.id
   constructor(
     public auth: AuthService,
-    public router : Router
+    public router: Router
   ) { }
 
   ngOnInit() {
     window.scroll(0, 0);
   }
 
-  sair(){
+  findByIdUsuarios(id: number) {
+    this.auth.getByIdUsuario(id).subscribe((resp: Usuario) => this.usuario = resp)
+
+  }
+  sair() {
     this.router.navigate(['/quemsomos'])
-    environment.token=''
-    environment.nome=''
-    environment.foto=''
-    environment.id=0
+    environment.token = ''
+    environment.nome = ''
+    environment.foto = ''
+    environment.id = 0
   }
 }
