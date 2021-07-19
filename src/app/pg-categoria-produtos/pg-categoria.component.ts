@@ -1,8 +1,8 @@
-import { ProdutoService } from './../service/produto.service';
-import { ProdutosServicos } from './../model/ProdutosServicos';
+import { ProdutoService } from '../service/produto.service';
+import { ProdutosServicos } from '../model/ProdutosServicos';
 import { Router, ActivatedRoute } from '@angular/router';
-import { CategoriaService } from './../service/categoria.service';
-import { Categoria } from './../model/Categoria';
+import { CategoriaService } from '../service/categoria.service';
+import { Categoria } from '../model/Categoria';
 import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment.prod';
 
