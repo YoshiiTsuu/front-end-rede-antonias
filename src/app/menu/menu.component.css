@@ -16,3 +16,11 @@ color: #814240;
 .m-0{
     margin: 0px;
 }
+
+ul {
+    display: flex;
+    align-items: center;
+}
+.cor-contorno{
+    outline-color: #664126;
+}
