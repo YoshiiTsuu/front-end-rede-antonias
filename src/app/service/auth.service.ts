@@ -65,11 +65,20 @@ export class AuthService {
 
   vendedor(){
     let ok: boolean = false
-    if(environment.vendedor == true){
+    if(environment.vendedor == "vendedora"){
       ok = true
     }
     return ok
   }
-  }
   
 
+  dadosUsuario(){
+    let usuario = {
+      nome: environment.nome,
+      id: environment.id,
+      vendedor: environment.vendedor
+    }
+    return usuario
+  }
+  
+}

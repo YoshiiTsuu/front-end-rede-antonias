@@ -13,6 +13,8 @@ export class MenuComponent implements OnInit {
 
     usuario:Usuario = new Usuario
     idUsuario=environment.id
+    nome = environment.nome
+    vendedor = environment.vendedor
     id = environment.id
 
   constructor(
