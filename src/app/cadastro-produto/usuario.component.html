@@ -53,13 +53,13 @@
                             <span class="col-4">Você está cadastrando:</span>
                             <div class="col-4">
                                 <input (click)="setRadio(true)" (click)="showSelect()" type="radio" id='produtoServico'
-                                    value='1' name='produtoServico' class="radioProduto" checked>
+                                    value='1' name='produtoServico' class="radioProduto" >
                                 <strong>
                                     Produto</strong>
                             </div>
                             <div class="col-4 ml-0">
                                 <input (click)="setRadio(false)" (click)="showSelect()" type="radio" id='produtoServico'
-                                    value='0' name='produtoServico'>
+                                    value='0' name='produtoServico'checked>
                                 <strong> Serviço</strong>
                             </div>
                         </div>
@@ -76,7 +76,7 @@
 
                                 <!--Select de Produtos-->
                                 <select name="categoria" id="categoria" class="form-control" [(ngModel)]='idCategoria'
-                                    (change)='findByIdCategoria()' *ngIf="show2">
+                                    (change)='findByIdCategoria()' *ngIf="show">
                                     <ng-container *ngFor= "let item of listaCategoria">
                                         <option *ngIf="item.produtoServicos == 'Produtos'" value={{item.id}}>
                                             <!--Antes value={{categoria.id}}-->
@@ -88,7 +88,7 @@
 
                                 <!--Select de Serviços-->
                                 <select name="categoria" id="categoria" class="form-control" [(ngModel)]='idCategoria'
-                                    (change)='findByIdCategoria()' *ngIf="show">
+                                    (change)='findByIdCategoria()' *ngIf="show2">
                                     <ng-container *ngFor= "let item of listaCategoria">
                                         <option *ngIf="item.produtoServicos == 'Serviços'" value={{item.id}}>
                                             {{item.categoria}}

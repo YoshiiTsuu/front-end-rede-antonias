@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment.prod';
 import { AuthService } from '../service/auth.service';
+import { AlertasService } from '../service/alertas.service';
 
 @Component({
   selector: 'app-menu',
@@ -12,32 +13,29 @@ import { AuthService } from '../service/auth.service';
 export class MenuComponent implements OnInit {
 
 
-    usuario:Usuario = new Usuario
-    idUsuario=environment.id
-    nome = environment.nome
-    vendedor = environment.vendedor
-    id = environment.id
+  usuario: Usuario = new Usuario
+  idUsuario = environment.id
+  nome = environment.nome
+  vendedor = environment.vendedor
+  id = environment.id
 
   constructor(
     public auth: AuthService,
-    public router : Router,
-    private route: ActivatedRoute
-
+    public router: Router,
+    private route: ActivatedRoute,
   ) { }
 
   ngOnInit() {
     window.scroll(0, 0);
-    }
+  }
 
-  findByIdUsuarios(id:number){
-    this.auth.getByIdUsuario(id).subscribe((resp:Usuario)=>{
+  findByIdUsuarios(id: number) {
+    this.auth.getByIdUsuario(id).subscribe((resp: Usuario) => {
       this.usuario = resp
     })
   }
 
-
-
-  sair(){
+  sair() {
     this.router.navigate(['/quemsomos'])
     environment.token = ''
     environment.nome = ''

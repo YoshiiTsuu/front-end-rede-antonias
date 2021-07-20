@@ -49,10 +49,10 @@
                     <div class="nav-link disabled text-light dropdown">
                         <button class=" btn dropdown-toggle cor-teste text-light mr-1 cor-contorno" type="button" id="dropdownMenuButton"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            {{auth.dadosUsuario().nome}}
+                            Olá, {{auth.dadosUsuario().nome}}
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" routerLink='/usuario'>Cadastrar Produtos</a>
+                            <a class="dropdown-item" routerLink='/usuario'>Cadastrar produtos</a>
                             <a class="dropdown-item" [routerLink]="['/usuario-editar',auth.dadosUsuario().id]">Editar
                                 dados pessoais</a>
                             <a class="dropdown-item" (click)='sair()'>Sair</a>
