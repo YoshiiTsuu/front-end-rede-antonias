@@ -19,7 +19,11 @@ import { ServicosComponent } from './servicos/servicos.component';
 import { VerProdutoComponent } from './ver-produto/ver-produto.component';
 import { PgCategoriaComponent } from './pg-categoria-produtos/pg-categoria.component';
 import { PgCategoriaServicosComponent } from './pg-categoria-servicos/pg-categoria-servicos.component';
+
+import { AlertasComponent } from './alertas/alertas.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
 import { VerServicoComponent } from './ver-servico/ver-servico.component';
+
 
 
 @NgModule({
@@ -39,13 +43,16 @@ import { VerServicoComponent } from './ver-servico/ver-servico.component';
     VerProdutoComponent,
     PgCategoriaComponent,
     PgCategoriaServicosComponent,
+    AlertasComponent,
     VerServicoComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ModalModule.forRoot()
   ],
 
   providers: [ 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Usuario } from '../model/Usuario';
+import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 
 @Component({
@@ -15,7 +16,8 @@ export class CadastrarComponent implements OnInit {
   tipoUsuario: string;
   constructor(
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private alertas: AlertasService
   ) { }
   ngOnInit() {
     window.scroll(0, 0)
@@ -38,13 +40,13 @@ export class CadastrarComponent implements OnInit {
       this.authService.cadastrar(this.usuario).subscribe((resp: Usuario) => {
         this.usuario = resp
         this.router.navigate(['/entrar'])
-        alert('Cadastro concluído com sucesso!')
+        this.alertas.showAlertSuccess('Cadastro concluído com sucesso!')
       }) //subscribe serve para que o objeto não seja enviado da forma json
-     
+
 
     }
     else {
-      alert('As senhas não coincidem!')
+      this.alertas.showAlertDanger('As senhas não coincidem!')
     }
   }
 }

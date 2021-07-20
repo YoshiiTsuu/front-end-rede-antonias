@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment.prod';
 import { Categoria } from '../model/Categoria';
 import { ProdutosServicos } from '../model/ProdutosServicos';
 import { Usuario } from '../model/Usuario';
+import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 import { CategoriaService } from '../service/categoria.service';
 import { ProdutoService } from '../service/produto.service';
@@ -40,7 +41,8 @@ export class UsuarioComponent implements OnInit {
     private router: Router,
     private route:ActivatedRoute,
     private categoriaService:CategoriaService,
-    private authService: AuthService
+    private authService: AuthService,
+    private alertas: AlertasService
   ) { }
 
   ngOnInit() {
@@ -102,7 +104,7 @@ export class UsuarioComponent implements OnInit {
 
     this.produtoService.postProdutos(this.produto).subscribe((resp: ProdutosServicos) => {
       this.produto = resp
-      alert('Produto/Serviço cadastrado com sucesso!')
+      this.alertas.showAlertSuccess('Produto/Serviço cadastrado com sucesso!')
       this.findAllProdutos()
       this.produto = new ProdutosServicos
     })
@@ -111,14 +113,14 @@ export class UsuarioComponent implements OnInit {
   atualizarProdutos(){
     this.produtoService.putProduto(this.produto).subscribe((resp:ProdutosServicos)=>{
       this.produto = resp
-      alert('Produto/Serviço atualizado com sucesso!')
+      this.alertas.showAlertSuccess('Produto/Serviço atualizado com sucesso!')
       this.router.navigate(['/usuario'])
     })
   }
 
   deletarProdutos(){
     this.produtoService.deleteProduto(this.idProduto).subscribe(()=>{
-      alert('Produto/Serviço apagado com sucesso!')
+      this.alertas.showAlertSuccess('Produto/Serviço apagado com sucesso!')
       this.router.navigate(['/usuario'])
     })
   }
