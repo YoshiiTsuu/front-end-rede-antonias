@@ -31,7 +31,7 @@ export class ServicosComponent implements OnInit {
 
   findAllProdutos() {
     this.produtoService.getAllProdutos().subscribe((resp: ProdutosServicos[]) => {
-      this.listaProduto = resp
+      this.listaProduto = respgi
     })
   }
   findAllCategoria(){
