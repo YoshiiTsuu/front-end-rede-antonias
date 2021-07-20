@@ -31,6 +31,9 @@ export class UsuarioComponent implements OnInit {
   id = environment.id
   foto = environment.foto
   nome =environment.nome
+
+  show: boolean = false
+  show2: boolean = true
   
   constructor(
     private produtoService: ProdutoService,
@@ -118,6 +121,11 @@ export class UsuarioComponent implements OnInit {
       alert('Produto/Serviço apagado com sucesso!')
       this.router.navigate(['/usuario'])
     })
+  }
+
+  showSelect(){
+    this.show = ! this.show;
+    this.show2 = ! this.show2;
   }
 
   sair(){
