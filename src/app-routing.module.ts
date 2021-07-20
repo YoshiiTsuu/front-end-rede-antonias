@@ -12,6 +12,7 @@ import { CadastrarCategoriaComponent } from './app/cadastrar-categoria/cadastrar
 import { ServicosComponent } from './app/servicos/servicos.component';
 import { PgCategoriaComponent } from './app/pg-categoria-produtos/pg-categoria.component';
 import { PgCategoriaServicosComponent } from './app/pg-categoria-servicos/pg-categoria-servicos.component';
+import { VerServicoComponent } from './app/ver-servico/ver-servico.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'quemsomos', pathMatch: 'full' },
@@ -28,7 +29,8 @@ const routes: Routes = [
   { path: 'usuario-delete/:id', component: UsuarioEditComponent },
   {path: 'ver-produto/:id', component: VerProdutoComponent}, //Não coloquei o id aqui pois não funcionou anteriormente
   {path: 'produtos-categorias/:id' , component: PgCategoriaComponent},
-  {path: 'produtos-categorias-servico/:id' , component:PgCategoriaServicosComponent}
+  {path: 'produtos-categorias-servico/:id' , component:PgCategoriaServicosComponent},
+  {path: 'ver-servico/:id', component:VerServicoComponent}
 ];
 
 @NgModule({

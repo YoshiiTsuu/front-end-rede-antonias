@@ -39,20 +39,16 @@
                 </form>
             </div>
             <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link text-light" href="#">Quem somos?</a>
-
-                </li>
                 <li *ngIf='auth.naoLogado()' class="nav-item">
-                    <a class="nav-link disabled text-light" routerLink='/usuario'>Entrar
+                    <a class="nav-link disabled text-light mr-1" routerLink='/usuario'>Entrar
                         <i class="fa fa-user-circle-o" aria-hidden="true"></i>
                     </a>
                 </li>
                 <!--Menu Vendedora-->
                 <ng-container *ngIf='auth.logado()'>
                     <div class="nav-link disabled text-light dropdown">
-                        <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
+                        <button class=" btn dropdown-toggle cor-teste text-light mr-1 cor-contorno" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             {{auth.dadosUsuario().nome}}
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -63,6 +59,9 @@
                         </div>
                     </div>
                 </ng-container>
+                <li class="nav-item align-middle">
+                    <a class="nav-link text-light" href="#">Quem somos?</a>
+                </li>
 
                 <li class="nav-item d-flex align-items-center mr-4">
                     <a class="text-light" style="font-size: 20pt;">
