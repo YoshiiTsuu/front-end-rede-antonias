@@ -55,3 +55,8 @@
     background-attachment: fixed;
     background-size: cover;
 }
+
+.card-r{
+    box-shadow: 0 5px 202px rgba(0, 0, 0, 0.5);
+    transition: 0.5s;
+}
