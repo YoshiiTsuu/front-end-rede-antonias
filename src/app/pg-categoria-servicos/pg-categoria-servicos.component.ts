@@ -13,7 +13,6 @@ import { ProdutoService } from '../service/produto.service';
 export class PgCategoriaServicosComponent implements OnInit {
   produtos: ProdutosServicos = new ProdutosServicos()
   listaProduto: ProdutosServicos[]
-
   categoria: Categoria = new Categoria()
   idCategoria: number
   listaCategoria: Categoria[]

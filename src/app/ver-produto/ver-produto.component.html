@@ -1,35 +1,15 @@
 <div class="cor-teste2">
-    <!--<div class="cor-bg">-->
-    <div class=" container" style="height: 40px;">
+    <div class=" container" style="height: 50px;">
         <div class="row">
-            <div class="col d-flex justify-content-center" style="margin-top: 8px;">
-                <a href="" class=" text-light">Vestuário
-                </a>
-            </div>
-            <div class="col d-flex justify-content-center" style="margin-top: 8px;">
-                <a href="" class=" text-light">Alimentos</a>
-            </div>
-            <div class="col d-flex justify-content-center" style="margin-top: 8px;">
-                <a href="" class=" text-light">Bungiganga</a>
-            </div>
-            <div class="col d-flex justify-content-center" style="margin-top: 8px;">
-                <a href="" class=" text-light">Doces</a>
-            </div>
-            <div class="col d-flex justify-content-center" style="margin-top: 8px;">
-                <a href="" class=" text-light">Marionetes</a>
-            </div>
-            <div class="col d-flex justify-content-center" style="margin-top: 8px;">
-                <a href="" class=" text-light">Eletrônicos</a>
-            </div>
-            <div class="col d-flex justify-content-center" style="margin-top: 8px;">
-                <a href="" class=" text-light">Artesanais</a>
-            </div>
-            <div class="col d-flex justify-content-center" style="margin-top: 8px;">
-                <a href="" class=" text-light">Veganos</a>
-            </div>
-            <div class="col d-flex justify-content-center" style="margin-top: 8px;">
-                <a href="" class=" text-light">Educação</a>
-            </div>
+            <!--Div com ngContainer para gerar lista e div com ngIf para filtrar-->
+            <ng-container *ngFor="let item of listaCategoria">
+                <div class="col d-flex justify-content-center bordinha" style="margin-top: 8px;"
+                    *ngIf="item.produtoServicos == 'Produtos'">
+                    <a [routerLink]="['/produtos-categorias',item.id]"
+                        class=" text-light d-flex align-items-center">{{item.categoria}}
+                    </a>
+                </div>
+            </ng-container>
         </div>
     </div>
 </div>
@@ -84,15 +64,17 @@
     </div>
     <div class="row">
         <div class="d-flex justify-content-around m-3 row">
-            <div class="card mt-5 ml-3" style="width: 14rem;" *ngFor='let produto of listaProduto'>
+            <ng-container *ngFor='let produto of listaProduto'>
+            <div *ngIf="produto.escolhaServicosProdutos == true" class="card mt-5 ml-3" style="width: 14rem;">
                 <!--Criei o <a> para conseguir colocar o redirecionamento quando a pessoa clicar, colocarem todo o card depois-->
-                <a [routerLink]="['/ver-produto',produto.id]" (click)="refresh(produto.id)"><img width="100px" height="200px" class="card-img-top"
+                <a (click)='refresh(produto.id)'[routerLink]="['/ver-produto',produto.id]"><img width="100px" height="200px" class="card-img-top"
                         src="{{produto.midias}}" alt="Imagem de capa do card"></a>
                 <div class="card-body">
                     <p>{{produto.nomeProdutosServicos}}</p>
                     <h4 class="card-text">R${{produto.preco}}</h4>
                 </div>
             </div>
+        </ng-container>
         </div>
     </div>
 </div>

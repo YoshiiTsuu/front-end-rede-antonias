@@ -1,24 +1,23 @@
-import { ActivatedRoute, Router } from '@angular/router';
-import { ProdutoService } from './../service/produto.service';
-import { CategoriaService } from './../service/categoria.service';
-import { ProdutosServicos } from './../model/ProdutosServicos';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Categoria } from '../model/Categoria';
+import { ProdutosServicos } from '../model/ProdutosServicos';
+import { CategoriaService } from '../service/categoria.service';
+import { ProdutoService } from '../service/produto.service';
 
 @Component({
-  selector: 'app-ver-produto',
-  templateUrl: './ver-produto.component.html',
-  styleUrls: ['./ver-produto.component.css']
+  selector: 'app-ver-servico',
+  templateUrl: './ver-servico.component.html',
+  styleUrls: ['./ver-servico.component.css']
 })
-export class VerProdutoComponent implements OnInit {
+export class VerServicoComponent implements OnInit {
 
   produto: ProdutosServicos = new ProdutosServicos()
+  categoria: Categoria = new Categoria()
   listaProduto: ProdutosServicos[]
   listaCategoria: Categoria[]
   idProduto : number
-  categoria: Categoria = new Categoria()
   idCategoria:number
-
   constructor(
     private produtoService: ProdutoService,
     private categoriaService: CategoriaService,
@@ -31,10 +30,17 @@ export class VerProdutoComponent implements OnInit {
     this.findAllProdutos() 
     this.idProduto = this.route.snapshot.params['id']
     this.findByIdProdutos(this.idProduto)
+    this.idCategoria = this.route.snapshot.params['id']
+    this.findByIdCategoria()
     this.findAllCategoria()
   }
-  findAllCategoria(){
-    this.categoriaService.getAllCategoria().subscribe((resp:Categoria[])=>{
+  findByIdCategoria() {
+    this.categoriaService.getByIdCategoria(this.idCategoria).subscribe((resp: Categoria) => {
+      this.categoria = resp
+    })
+  }
+  findAllCategoria() {
+    this.categoriaService.getAllCategoria().subscribe((resp: Categoria[]) => {
       this.listaCategoria = resp
     })
   }
@@ -50,7 +56,7 @@ export class VerProdutoComponent implements OnInit {
   }
   refresh(idCat: number) {
     this.router.navigateByUrl('/quemsomos', { skipLocationChange: true }).then(() => {
-      this.router.navigate(['/ver-produto', idCat])
+      this.router.navigate(['/ver-servico', idCat])
     })
   }
 }
