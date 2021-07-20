@@ -7,6 +7,7 @@ import { ProdutosServicos } from 'src/app/model/ProdutosServicos';
 import { CategoriaService } from 'src/app/service/categoria.service';
 import { ProdutoService } from 'src/app/service/produto.service';
 import { environment } from 'src/environments/environment.prod';
+import { AlertasService } from 'src/app/service/alertas.service';
 
 @Component({
   templateUrl: './produto-edit.component.html',
@@ -36,13 +37,14 @@ export class ProdutoEditComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private categoriaService: CategoriaService,
-    private authService : AuthService
+    private authService : AuthService, 
+    private alertas: AlertasService
   ) { }
 
   ngOnInit() {
     window.scroll(0, 0);
     if (environment.token == '') {
-      alert('Sua sessão expirou, faça login novamente')
+      this.alertas.showAlertInfo('Sua sessão expirou, faça login novamente')
       this.router.navigate(['/entrar'])
     }
     let id = this.route.snapshot.params['id']
@@ -86,14 +88,14 @@ export class ProdutoEditComponent implements OnInit {
 
     this.produtoService.putProduto(this.produto).subscribe((resp: ProdutosServicos) => {
       this.produto = resp
-      alert('Produto/Serviço atualizado com sucesso!')
+      this.alertas.showAlertSuccess('Produto/Serviço atualizado com sucesso!')
       this.router.navigate(['/usuario'])
     })
   }
 
   deletarProdutos(){
     this.produtoService.deleteProduto(this.idProduto).subscribe(()=>{
-      alert('Produto/Serviço apagado com sucesso!')
+      this.alertas.showAlertSuccess('Produto/Serviço apagado com sucesso!')
       this.router.navigate(['/usuario'])
     })
   }
