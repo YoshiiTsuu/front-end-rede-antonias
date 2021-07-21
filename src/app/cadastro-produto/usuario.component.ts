@@ -19,7 +19,7 @@ export class UsuarioComponent implements OnInit {
   produto: ProdutosServicos = new ProdutosServicos
   listaProduto: ProdutosServicos[]
   produtoOuServico: boolean
-  idProduto : number
+  idProduto: number
   listaCategoria: Categoria[]
   categoria: Categoria = new Categoria()
   idCategoria: number
@@ -28,16 +28,16 @@ export class UsuarioComponent implements OnInit {
   idUsuario = environment.id
   id = environment.id
   foto = environment.foto
-  nome =environment.nome
+  nome = environment.nome
 
   show: boolean = false
   show2: boolean = true
-  
+
   constructor(
     private produtoService: ProdutoService,
     private router: Router,
-    private route:ActivatedRoute,
-    private categoriaService:CategoriaService,
+    private route: ActivatedRoute,
+    private categoriaService: CategoriaService,
     private authService: AuthService,
     private alertas: AlertasService
   ) { }
@@ -65,9 +65,9 @@ export class UsuarioComponent implements OnInit {
       this.listaProduto = resp
     })
   }
-  
-  findByIdCategoria(){
-    this.categoriaService.getByIdCategoria(this.idCategoria).subscribe((resp: Categoria)=>{
+
+  findByIdCategoria() {
+    this.categoriaService.getByIdCategoria(this.idCategoria).subscribe((resp: Categoria) => {
       this.categoria = resp;
     })
   }
@@ -77,14 +77,14 @@ export class UsuarioComponent implements OnInit {
     });
   }
 
-  findByIdProdutos(id:number){
-    this.produtoService.getByIdProduto(id).subscribe((resp:ProdutosServicos)=>{
+  findByIdProdutos(id: number) {
+    this.produtoService.getByIdProduto(id).subscribe((resp: ProdutosServicos) => {
       this.produto = resp
     })
   }
   // Esta parte não funciona É O FINDBYUSUARIO! PRA PODER USAR O GET ID NO BOTÃO DE EDITAR DADOS PESSOAIS 
-  findByIdUsuario(){
-    this.authService.getByIdUsuario(this.idUsuario).subscribe((resp:Usuario)=>{
+  findByIdUsuario() {
+    this.authService.getByIdUsuario(this.idUsuario).subscribe((resp: Usuario) => {
       this.usuario = resp
     })
   }
@@ -107,31 +107,37 @@ export class UsuarioComponent implements OnInit {
     })
   }
 
-  atualizarProdutos(){
-    this.produtoService.putProduto(this.produto).subscribe((resp:ProdutosServicos)=>{
+  atualizarProdutos() {
+    this.produtoService.putProduto(this.produto).subscribe((resp: ProdutosServicos) => {
       this.produto = resp
       this.alertas.showAlertSuccess('Produto/Serviço atualizado com sucesso!')
       this.router.navigate(['/usuario'])
     })
   }
 
-  deletarProdutos(){
-    this.produtoService.deleteProduto(this.idProduto).subscribe(()=>{
+  deletarProdutos() {
+    this.produtoService.deleteProduto(this.idProduto).subscribe(() => {
       this.alertas.showAlertSuccess('Produto/Serviço apagado com sucesso!')
       this.router.navigate(['/usuario'])
     })
   }
 
-  showSelect(){
-    this.show = ! this.show;
-    this.show2 = ! this.show2;
+  showSelect() {
+    this.show = !this.show;
+    this.show2 = !this.show2;
   }
 
-  sair(){
+  refresh() {
+    this.router.navigateByUrl('/home', { skipLocationChange: true }).then(() => {
+      this.router.navigate(["/usuario"])
+    })
+  }
+
+  sair() {
     this.router.navigate(['/quemsomos'])
-    environment.token=''
-    environment.nome=''
-    environment.foto=''
-    environment.id=0
+    environment.token = ''
+    environment.nome = ''
+    environment.foto = ''
+    environment.id = 0
   }
 }
