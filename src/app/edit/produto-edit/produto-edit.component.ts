@@ -107,5 +107,4 @@ export class ProdutoEditComponent implements OnInit {
     environment.foto=''
     environment.id=0
   }
-
 }
