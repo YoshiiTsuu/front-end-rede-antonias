@@ -86,7 +86,7 @@ export class UsuarioComponent implements OnInit {
     })
   }
   // Esta parte não funciona É O FINDBYUSUARIO! PRA PODER USAR O GET ID NO BOTÃO DE EDITAR DADOS PESSOAIS 
-  findByIdUsuarios(id:number){
+  findByIdUsuario(id:number){
     this.authService.getByIdUsuario(id).subscribe((resp:Usuario)=>{
       this.usuario = resp
     })
