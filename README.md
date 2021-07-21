@@ -27,20 +27,21 @@
 - Pesquisa de produtos;
 - Atualizar usuários/produtos;
                                                                                                                        
-<h4>Implementações futuras</h4>                                                                                                                       
+<h4>Implementações futuras</h4>
+                                                                                                                                 
 - Implementar avaliação dos usuários consumidor e vendedora (através like e dislike);
-- Implementar a opção de e
-                                                                                                                       
+- Implementar uma avanliação dos produtos e serviços (através de like e dislike);
+- Implementar a opção de pagamentos;                                                                                                                                 
+- Implementar um carrosel com os produtos mais vendidos                                                                             
 <h2>Tecnologias utilizadas</h2>
                                                                                                                        
-<img alt="" src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E"/>
-<img alt="" src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white"/>
-<img alt="" src="https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white"/>
-<img alt="" src="https://img.shields.io/badge/typescript%20-%23007ACC.svg?&style=for-the-badge&logo=typescript&logoColor=white"/>
-<img alt="" src="https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white"/>
-<img alt="" src="https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white"/>
-<img alt="" src="https://img.shields.io/badge/figma%20-%23F24E1E.svg?&style=for-the-badge&logo=figma&logoColor=white"/>
-
+<a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript"><img alt="" src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E"/></a>
+<a href="https://getbootstrap.com/"><<img alt="" src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white"/></a>
+<a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML"><img alt="" src="https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white"/></a>
+<a href="https://www.typescriptlang.org/"><img alt="" src="https://img.shields.io/badge/typescript%20-%23007ACC.svg?&style=for-the-badge&logo=typescript&logoColor=white"/></a>
+<a href="https://developer.mozilla.org/pt-BR/docs/Web/CSS"><img alt="" src="https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white"/></a>
+<a href="https://angular.io/"><img alt="" src="https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white"/></a>
+<a href="https://www.figma.com/"><img alt="" src="https://img.shields.io/badge/figma%20-%23F24E1E.svg?&style=for-the-badge&logo=figma&logoColor=white"/></a>
 
 ### Integrantes:
 - [Márcio Ribeiro](https://github.com/KaitM1)
