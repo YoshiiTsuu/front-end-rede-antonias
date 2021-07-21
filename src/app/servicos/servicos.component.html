@@ -103,7 +103,7 @@
             <ng-container *ngFor='let item of listaProduto'>
                 <div class="card mt-5" *ngIf="item.escolhaServicosProdutos == false">
                     <!--Criei o <a> para conseguir colocar o redirecionamento quando a pessoa clicar, colocarem todo o card depois-->
-                    <a [routerLink]="['/ver-produto',item.id]"><img width="100px" height="200px" class="card-img-top"
+                    <a [routerLink]="['/ver-servico/',item.id]"><img width="100px" height="200px" class="card-img-top"
                             src="{{item.midias}}" alt="Imagem de capa do card"></a>
                     <div class="card-body">
                         <h3 class="card-text">{{item.nomeProdutosServicos}}</h3>

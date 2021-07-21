@@ -42,16 +42,19 @@
             <h5 class="mt-5 cor-teste text-white txt-size">Outros serviços</h5>
         </div>
     </div>
-    <div class="row">
-        <div class="d-flex justify-content-around m-3 row">
-            <ng-container *ngFor='let produto of listaProduto'>
-                <div class="card mt-5 ml-3" style="width: 14rem;" *ngIf='produto.escolhaServicosProdutos == false'>
+    <div class="d-flex justify-content-around m-3 row">
+        <div class="esconder">
+            <ng-container *ngFor='let item of listaProduto'>
+                <div class="card mt-5" *ngIf="item.escolhaServicosProdutos == false">
                     <!--Criei o <a> para conseguir colocar o redirecionamento quando a pessoa clicar, colocarem todo o card depois-->
-                    <a (click)='refresh(produto.id)' [routerLink]="['/ver-servico',produto.id]"><img width="100px" height="200px" class="card-img-top"
-                            src="{{produto.midias}}" alt="Imagem de capa do card"></a>
+                    <a (click)='refresh(item.id)' [routerLink]="['/ver-servico',item.id]"><img width="100px" height="200px" class="card-img-top"
+                            src="{{item.midias}}" alt="Imagem de capa do card"></a>
                     <div class="card-body">
-                        <p>{{produto.nomeProdutosServicos}}</p>
-                        <h4 class="card-text">R${{produto.preco}}</h4>
+                        <h3 class="card-text">{{item.nomeProdutosServicos}}</h3>
+                        <h4 class="card-text">R${{item.preco}}</h4>
+                        <div class="content" style="margin-top: 20px;">
+                            <p>{{item.descricao}}</p>
+                        </div>
                     </div>
                 </div>
             </ng-container>
