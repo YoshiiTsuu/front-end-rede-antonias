@@ -12,9 +12,9 @@
 <h2>Rede Antonias</h2>
   Este é um projeto desenvolvido durante o bootcamp da Generation Brasil, <a href="https://github.com/mariaadelia/ProjetoRedeAntonias">clique aqui</a> para acessar o nosso repositório back-end
 <h2>Aqui estão algumas imagens do nosso projeto</h2>
-<h6>Página inicial do site</h6>
+<h4>Página inicial do site</h4>
 <img alt="" src="https://media.discordapp.net/attachments/854768370889392148/867200671517900810/unknown.png?width=1373&height=676">
-<h6>Nossos Produtos/h6>
+<h4>Nossos Produtos</h4>
 <img alt="" src="https://media.discordapp.net/attachments/854768370889392148/867205602853257236/unknown.png?width=801&height=676"/>
 
 <h2>Funcionalidades da aplicação</h2>
