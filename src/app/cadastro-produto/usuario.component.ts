@@ -23,9 +23,7 @@ export class UsuarioComponent implements OnInit {
   listaCategoria: Categoria[]
   categoria: Categoria = new Categoria()
   idCategoria: number
-
   usuario: Usuario = new Usuario()
-
   //(antes) idUsuario: number
   idUsuario = environment.id
   id = environment.id
@@ -54,7 +52,7 @@ export class UsuarioComponent implements OnInit {
     this.findByIdProdutos(this.idProduto)
     this.findAllProdutos()
     this.findAllCategoria()
-    // this.findByIdUsuarios(this.idUsuario)
+    this.findByIdUsuario()
   }
   //true = produtos e false = serviços
   setRadio(resp: boolean) {
@@ -85,8 +83,8 @@ export class UsuarioComponent implements OnInit {
     })
   }
   // Esta parte não funciona É O FINDBYUSUARIO! PRA PODER USAR O GET ID NO BOTÃO DE EDITAR DADOS PESSOAIS 
-  findByIdUsuario(id:number){
-    this.authService.getByIdUsuario(id).subscribe((resp:Usuario)=>{
+  findByIdUsuario(){
+    this.authService.getByIdUsuario(this.idUsuario).subscribe((resp:Usuario)=>{
       this.usuario = resp
     })
   }
