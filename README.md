@@ -14,7 +14,7 @@
 <h2>Aqui estão algumas imagens do nosso projeto</h2>
 <h4>Página inicial do site</h4>
 <img alt="" src="https://media.discordapp.net/attachments/854768370889392148/867200671517900810/unknown.png?width=1373&height=676">
-<h4>Nossos Produtos</h4>
+<h4>Nossos Serviços</h4>
 <img alt="" src="https://media.discordapp.net/attachments/854768370889392148/867205602853257236/unknown.png?width=801&height=676"/>
 
 <h2>Funcionalidades da aplicação</h2>
@@ -27,7 +27,7 @@
 - Pesquisa de produtos;
 - Atualizar usuários/produtos;
                                                                                                                        
-<h4>Implementações futuras</h4>
+<h2>Implementações futuras</h2>
                                                                                                                                  
 - Implementar avaliação dos usuários consumidor e vendedora (através like e dislike);
 - Implementar uma avanliação dos produtos e serviços (através de like e dislike);
@@ -42,6 +42,7 @@
 <a href="https://developer.mozilla.org/pt-BR/docs/Web/CSS"><img alt="" src="https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white"/></a>
 <a href="https://angular.io/"><img alt="" src="https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white"/></a>
 <a href="https://www.figma.com/"><img alt="" src="https://img.shields.io/badge/figma%20-%23F24E1E.svg?&style=for-the-badge&logo=figma&logoColor=white"/></a>
+                                                                                                                                                      
 
 ### Integrantes:
 - [Márcio Ribeiro](https://github.com/KaitM1)
