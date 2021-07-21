@@ -1,14 +1,11 @@
+.voltar{
+    color: #1B0C01;
+}
 .mt-76{
     margin-top: 76px;
 }
 .cor-bg{
     background-color: #e7966a;
-}
-.yoga{
-    display:block;
-    max-width: 100%;
-    vertical-align: middle;
-    border: 0px;
 }
 .esconder{
     position: relative;
@@ -51,7 +48,7 @@
 .esconder .card .content{
     position: relative;
     margin-top: -180px;
-    padding: 0px;
+    padding:0;
     color: #111;
     visibility: hidden;
     opacity: 0;
@@ -62,8 +59,4 @@
     opacity: 1;
     margin-top: -40px;
     transition-delay: 0.3s;
-}
-
-.menu-serviços{
-    background-color:#3f3128;
 }

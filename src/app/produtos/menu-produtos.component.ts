@@ -16,11 +16,11 @@ export class MenuProdutosComponent implements OnInit {
   idCategoria:number
   listaCategoria: Categoria[]
   listaProduto: ProdutosServicos[]
-
+  busca: string
   constructor(
     private produtoService: ProdutoService,
     private categoriaService : CategoriaService,
-    //private router: Router,
+    private router: Router,
     private route: ActivatedRoute,
     public produto:ProdutoService
   ) {}
@@ -50,4 +50,11 @@ export class MenuProdutosComponent implements OnInit {
       this.categoria = resp
     })
   }
+
+  refresh(){
+    this.router.navigateByUrl('/quemsomos', { skipLocationChange: true }).then(() =>{
+        this.router.navigate(["/pesquisar",this.busca])
+    })
+}
+
 }

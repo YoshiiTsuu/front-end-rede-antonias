@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Route } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import { Categoria } from '../model/Categoria';
 import { ProdutosServicos } from '../model/ProdutosServicos';
 import { CategoriaService } from '../service/categoria.service';
@@ -15,10 +15,12 @@ export class ServicosComponent implements OnInit {
   idCategoria:number
   listaCategoria: Categoria[]
   listaProduto: ProdutosServicos[]
+  busca: string
   constructor(
     private produtoService: ProdutoService,
     private categoriaService: CategoriaService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit(){
@@ -46,4 +48,10 @@ export class ServicosComponent implements OnInit {
       this.categoria = resp
     })
   }
+  
+  refresh(){
+    this.router.navigateByUrl('/quemsomos', { skipLocationChange: true }).then(() =>{
+        this.router.navigate(["/pesquisar",this.busca])
+    })
+}
 } 

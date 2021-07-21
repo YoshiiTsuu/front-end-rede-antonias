@@ -1,7 +1,7 @@
-<div class="cor-teste2">
+<!-- <div class="cor-teste2">
     <div class=" container" style="height: 50px;">
         <div class="row">
-            <!--Div com ngContainer para gerar lista e div com ngIf para filtrar-->
+            
             <ng-container *ngFor="let item of listaCategoria">
                 <div class="col d-flex justify-content-center bordinha" style="margin-top: 8px;"
                     *ngIf="item.produtoServicos == 'Produtos'">
@@ -12,7 +12,27 @@
             </ng-container>
         </div>
     </div>
-</div>
+</div> -->
+<nav id="menu-h" class="navbar cor-teste2">
+    <ng-container *ngFor="let item of listaCategoria">
+        <div class="col d-flex justify-content-center bordinha" style="margin-top: 8px;"
+            *ngIf="item.produtoServicos == 'Produtos'">
+            <a [routerLink]="['/produtos-categorias',item.id]"
+                class=" text-light d-flex align-items-center">{{item.categoria}}
+            </a>
+        </div>
+    </ng-container>
+    <form class="form-inline" style="margin-left: 30px;">
+        <input [(ngModel)]="busca" name="busca" class="form-control mr-sm-2" type="search"
+            placeholder="O que você procura?..." aria-label="Pesquisar">
+        <button (click)="refresh()" class="btn btn-outline-warning my-2 my-sm-0" type="submit"><i class="fa fa-search"
+                aria-hidden="true"></i>
+        </button>
+    </form>
+</nav>
+
+
+
 
 <!-- Carousel -->
 <div class="container">

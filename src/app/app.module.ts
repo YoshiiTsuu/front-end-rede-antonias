@@ -23,6 +23,7 @@ import { PgCategoriaServicosComponent } from './pg-categoria-servicos/pg-categor
 import { AlertasComponent } from './alertas/alertas.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { VerServicoComponent } from './ver-servico/ver-servico.component';
+import { PesquisarComponent } from './pesquisar/pesquisar.component';
 
 
 
@@ -44,7 +45,8 @@ import { VerServicoComponent } from './ver-servico/ver-servico.component';
     PgCategoriaComponent,
     PgCategoriaServicosComponent,
     AlertasComponent,
-    VerServicoComponent
+    VerServicoComponent,
+    PesquisarComponent
 
   ],
   imports: [
