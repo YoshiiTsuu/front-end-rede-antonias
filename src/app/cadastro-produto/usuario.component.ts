@@ -20,7 +20,6 @@ export class UsuarioComponent implements OnInit {
   listaProduto: ProdutosServicos[]
   produtoOuServico: boolean
   idProduto : number
-
   listaCategoria: Categoria[]
   categoria: Categoria = new Categoria()
   idCategoria: number

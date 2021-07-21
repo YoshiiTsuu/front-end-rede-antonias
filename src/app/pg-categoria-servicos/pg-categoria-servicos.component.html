@@ -19,17 +19,22 @@
     </div>
 </div>
 <div class="container">
-    <div class="d-flex justify-content-around m-3 row mt-5">
-        <ng-container *ngFor='let produto of listaProduto'>
-            <div class="card mt-5" style="width: 14rem;" *ngIf="produto.categoria.id == idCategoria">
-                <!--Criei o <a> para conseguir colocar o redirecionamento quando a pessoa clicar, colocarem todo o card depois-->
-                <a [routerLink]="['/ver-servico',produto.id]"><img width="100px" height="200px" class="card-img-top"
-                        src="{{produto.midias}}" alt="Imagem de capa do card"></a>
-                <div class="card-body">
-                    <p>{{produto.nomeProdutosServicos}}</p>
-                    <h4 class="card-text">R${{produto.preco}}</h4>
+    <div class="d-flex justify-content-around m-3 row">
+        <div class="esconder">
+            <ng-container *ngFor='let item of listaProduto'>
+                <div class="card mt-5" style="width: 14rem;" *ngIf="item.categoria.id == idCategoria">
+                    <!--Criei o <a> para conseguir colocar o redirecionamento quando a pessoa clicar, colocarem todo o card depois-->
+                    <a [routerLink]="['/ver-produto',item.id]"><img width="100px" height="200px" class="card-img-top"
+                            src="{{item.midias}}" alt="Imagem de capa do card"></a>
+                    <div class="card-body">
+                        <h3 class="card-text">{{item.nomeProdutosServicos}}</h3>
+                        <h4 class="card-text">R${{item.preco}}</h4>
+                        <div class="content" style="margin-top: 20px;">
+                            <p>{{item.descricao}}</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </ng-container>
+            </ng-container>
+        </div>
     </div>
 </div>

@@ -27,10 +27,10 @@ const routes: Routes = [
   { path: 'produto-editar/:id', component: ProdutoEditComponent },
   { path: 'produto-delete/:id', component: ProdutoEditComponent },
   { path: 'usuario-delete/:id', component: UsuarioEditComponent },
-  {path: 'ver-produto/:id', component: VerProdutoComponent}, //Não coloquei o id aqui pois não funcionou anteriormente
-  {path: 'produtos-categorias/:id' , component: PgCategoriaComponent},
-  {path: 'produtos-categorias-servico/:id' , component:PgCategoriaServicosComponent},
-  {path: 'ver-servico/:id', component:VerServicoComponent}
+  { path: 'ver-produto/:id', component: VerProdutoComponent }, //Não coloquei o id aqui pois não funcionou anteriormente
+  { path: 'produtos-categorias/:id', component: PgCategoriaComponent },
+  { path: 'produtos-categorias-servico/:id', component: PgCategoriaServicosComponent },
+  { path: 'ver-servico/:id', component: VerServicoComponent }
 ];
 
 @NgModule({
