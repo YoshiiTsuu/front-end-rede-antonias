@@ -1,0 +1,33 @@
+<div>
+    <a routerLink="/quemsomos" class="m-0 font-weight-bold text fs-16 voltar">Voltar
+        <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
+    </a>
+</div>
+
+<div class="container mt-3 mb-5">
+    <div class="row mb-5">
+        <div class="col-md-12">
+            <h1 class="text-center ">Pesquisa por </h1>
+            <h2 class="text-center ">"{{busca}}"</h2>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-around m-3 row">
+        <div class="esconder">
+            <ng-container *ngFor='let item of listaProdutosServicos'>
+                <div class="card mt-5">
+                    <!--Criei o <a> para conseguir colocar o redirecionamento quando a pessoa clicar, colocarem todo o card depois-->
+                    <a [routerLink]="['/ver-produto',item.id]"><img width="100px" height="200px" class="card-img-top"
+                            src="{{item.midias}}" alt="Imagem de capa do card"></a>
+                    <div class="card-body">
+                        <h3 class="card-text">{{item.nomeProdutosServicos}}</h3>
+                        <h4 class="card-text">R${{item.preco}}</h4>
+                        <div class="content" style="margin-top: 20px;">
+                            <p>{{item.descricao}}</p>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>

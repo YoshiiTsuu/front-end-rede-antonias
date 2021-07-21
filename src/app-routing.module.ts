@@ -13,6 +13,7 @@ import { ServicosComponent } from './app/servicos/servicos.component';
 import { PgCategoriaComponent } from './app/pg-categoria-produtos/pg-categoria.component';
 import { PgCategoriaServicosComponent } from './app/pg-categoria-servicos/pg-categoria-servicos.component';
 import { VerServicoComponent } from './app/ver-servico/ver-servico.component';
+import { PesquisarComponent } from './app/pesquisar/pesquisar.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'quemsomos', pathMatch: 'full' },
@@ -30,7 +31,8 @@ const routes: Routes = [
   { path: 'ver-produto/:id', component: VerProdutoComponent }, //Não coloquei o id aqui pois não funcionou anteriormente
   { path: 'produtos-categorias/:id', component: PgCategoriaComponent },
   { path: 'produtos-categorias-servico/:id', component: PgCategoriaServicosComponent },
-  { path: 'ver-servico/:id', component: VerServicoComponent }
+  { path: 'ver-servico/:id', component: VerServicoComponent },
+  {path: 'pesquisar/:nome', component: PesquisarComponent}
 ];
 
 @NgModule({

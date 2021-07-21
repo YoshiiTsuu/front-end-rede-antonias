@@ -18,7 +18,7 @@ export class PgCategoriaComponent implements OnInit {
   categoria: Categoria = new Categoria()
   idCategoria: number
   listaCategoria: Categoria[]
-
+  busca: string
   constructor(
     private categoriaService: CategoriaService,
     private produtoService: ProdutoService,
@@ -55,4 +55,11 @@ export class PgCategoriaComponent implements OnInit {
          this.router.navigate(['/produtos-categorias',idCat])
     })
   }
+
+//   refresh2(){
+//     this.router.navigateByUrl('/quemsomos', { skipLocationChange: true }).then(() =>{
+//         this.router.navigate(["/pesquisar",this.busca])
+//     })
+// }
+
 }

@@ -24,6 +24,12 @@ export class ProdutoService {
   getAllProdutos(): Observable<ProdutosServicos[]>{
     return this.http.get<ProdutosServicos[]>('https://redeantonias.herokuapp.com/produtosservicos', this.token)
   }
+
+  getByNomeProdutosServicos(nome: string): Observable<ProdutosServicos[]>{
+    return this.http.get<ProdutosServicos[]>(`https://redeantonias.herokuapp.com/produtosservicos/nome/${nome}`)
+  }
+
+
   postProdutos(produtos: ProdutosServicos): Observable<ProdutosServicos>{
     return this.http.post<ProdutosServicos>('https://redeantonias.herokuapp.com/produtosservicos', produtos, this.token)
   }
