@@ -36,7 +36,7 @@
 <h2>Tecnologias utilizadas</h2>
                                                                                                                        
 <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript"><img alt="" src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E"/></a>
-<a href="https://getbootstrap.com/"><<img alt="" src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white"/></a>
+<a href="https://getbootstrap.com/"><img alt="" src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white"/></a>
 <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML"><img alt="" src="https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white"/></a>
 <a href="https://www.typescriptlang.org/"><img alt="" src="https://img.shields.io/badge/typescript%20-%23007ACC.svg?&style=for-the-badge&logo=typescript&logoColor=white"/></a>
 <a href="https://developer.mozilla.org/pt-BR/docs/Web/CSS"><img alt="" src="https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white"/></a>
@@ -47,4 +47,4 @@
 - [Márcio Ribeiro](https://github.com/KaitM1)
 - [Maria Adélia](https://github.com/sabinonatalia)
 - [Natália Sabino](https://github.com/sabinonatalia)                                                                                                                    
-- [Yoshimitsu Miyahira](https://github.com/YoshiiTsuu}                                                                                                                    
+- [Yoshimitsu Miyahira](https://github.com/YoshiiTsuu)                                                                                                                 
