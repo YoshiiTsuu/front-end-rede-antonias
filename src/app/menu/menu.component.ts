@@ -29,8 +29,8 @@ export class MenuComponent implements OnInit {
     window.scroll(0, 0);
   }
 
-  findByIdUsuarios(id: number) {
-    this.auth.getByIdUsuario(id).subscribe((resp: Usuario) => {
+  findByIdUsuarios() {
+    this.auth.getByIdUsuario(this.idUsuario).subscribe((resp: Usuario) => {
       this.usuario = resp
     })
   }
