@@ -21,7 +21,8 @@ export class MenuProdutosComponent implements OnInit {
     private produtoService: ProdutoService,
     private categoriaService : CategoriaService,
     //private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    public produto:ProdutoService
   ) {}
 
   ngOnInit(){
