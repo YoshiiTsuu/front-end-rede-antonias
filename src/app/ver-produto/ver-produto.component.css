@@ -56,7 +56,6 @@
 .esconder .card .content{
   position: relative;
   margin-top: -180px;
-  padding:;
   color: #111;
   visibility: hidden;
   opacity: 0;
@@ -68,32 +67,3 @@
   margin-top: -40px;
   transition-delay: 0.3s;
 }
-
-/**
-.plus-minus-input {
-    -webkit-align-items: center;
-        -ms-flex-align: center;
-            align-items: center;
-}
-  
-  .plus-minus-input .input-group-field {
-    text-align: center;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-    padding: 1rem;
-  }
-  
-  .plus-minus-input .input-group-field::-webkit-inner-spin-button,
-  .plus-minus-input .input-group-field ::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-            appearance: none;
-  }
-  
-  .plus-minus-input .input-group-button .circle {
-    border-radius: 50%;
-    padding: 0.25em 0.8em;
-  }
-
-  */
-
-  

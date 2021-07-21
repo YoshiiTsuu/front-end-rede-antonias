@@ -4,6 +4,17 @@
 .cor-bg{
     background-color: #e7966a;
 }
+
+.fa{
+    color: #777777;
+}
+.fa-thumbs-o-up:hover{
+    color: #000000;
+}
+
+.fa-thumbs-o-down:hover{
+    color: #000000;
+}
 .yoga{
     display:block;
     max-width: 100%;
@@ -51,7 +62,6 @@
 .esconder .card .content{
     position: relative;
     margin-top: -180px;
-    padding:;
     color: #111;
     visibility: hidden;
     opacity: 0;
